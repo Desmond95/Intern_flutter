@@ -12,7 +12,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       backgroundColor: Color(0xFFF6D819),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(75.0),
+          padding: const EdgeInsets.all(70.0),
           child: Image(
             image: AssetImage('images/logo.png'),
           ),
