@@ -1,5 +1,5 @@
+import 'package:fast_shop/login.dart';
 import 'package:flutter/material.dart';
-
 import 'onboardingscreen.dart';
 
 void main() {
@@ -15,7 +15,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light().copyWith(
           // scaffoldBackgroundColor: Color(0xFFF6D819),
           ),
-      routes: {},
+      routes: {
+        '/first': (context) => LoginPage(),
+      },
       home: Scaffold(
         body: OnBoardingScreen(),
       ),
