@@ -13,8 +13,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(70.0),
-          child: Image(
-            image: AssetImage('images/logo.png'),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/first');
+            },
+            child: Image(
+              image: AssetImage('images/logo.png'),
+            ),
           ),
         ),
       ),
