@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
               Text(
                 'Welcome to Dovv',
               ),
-              Text('Sign in to continue'),
+              Text('Sign in to continue', style: TextStyle()),
             ],
           ),
         ),
