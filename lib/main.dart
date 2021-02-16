@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
           // scaffoldBackgroundColor: Color(0xFFF6D819),
           ),
       routes: {
-        '/first': (context) => LoginPage(),
+        '/login': (context) => LoginPage(),
       },
       home: Scaffold(
         body: OnBoardingScreen(),
