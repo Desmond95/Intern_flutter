@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:fast_shop/login.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -6,6 +9,21 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  startTime() async {
+    var _duration = new Duration(seconds: 2);
+    return new Timer(_duration, gotoLoginPage);
+  }
+
+  void gotoLoginPage() {
+    Navigator.of(context).pushReplacementNamed('/login');
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    startTime();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,9 +32,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         child: Padding(
           padding: const EdgeInsets.all(70.0),
           child: GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, '/first');
-            },
+            // onTap: () {
+            //   Navigator.pushNamed(context, '/login');
+            // },
             child: Image(
               image: AssetImage('images/logo.png'),
             ),
