@@ -1,5 +1,6 @@
 import 'package:fast_shop/screens/home_screen.dart';
 import 'package:fast_shop/screens/login.dart';
+import 'package:fast_shop/screens/product_detail.dart';
 import 'package:fast_shop/screens/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'onboardingscreen.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginPage(),
         '/signup': (context) => SignUpPage(),
         '/home': (context) => HomePage(),
+        '/product': (context) => ProductDetailPage(),
       },
       home: Scaffold(
         body: OnBoardingScreen(),
