@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:fast_shop/login.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatefulWidget {

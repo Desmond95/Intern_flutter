@@ -1,8 +1,7 @@
+import 'package:fast_shop/component/constant.dart';
+import 'package:fast_shop/component/inputfield.dart';
+import 'package:fast_shop/component/square_button.dart';
 import 'package:flutter/material.dart';
-
-import 'component/constant.dart';
-import 'component/inputfield.dart';
-import 'component/square_button.dart';
 
 class LoginPage extends StatefulWidget {
   @override
