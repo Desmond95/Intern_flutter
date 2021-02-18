@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SignUp extends StatefulWidget {
+class SignUpPage extends StatefulWidget {
   @override
-  _SignUpState createState() => _SignUpState();
+  _SignUpPageState createState() => _SignUpPageState();
 }
 
-class _SignUpState extends State<SignUp> {
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +43,7 @@ class _SignUpState extends State<SignUp> {
               ),
               RaisedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/first');
+                  Navigator.pushNamed(context, '/home');
                 },
                 child: Text(
                   'Sign up',
