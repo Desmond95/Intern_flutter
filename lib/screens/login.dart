@@ -1,3 +1,4 @@
+import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/inputfield.dart';
 import 'package:fast_shop/components/square_button.dart';
 import 'package:fast_shop/constants.dart';
