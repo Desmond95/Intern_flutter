@@ -11,6 +11,7 @@ class InputField extends StatelessWidget {
     this.onPressed,
     this.suffixIcon2,
     this.secureText,
+    this.padding,
   });
 
   final IconData prefixIcon, suffixIcon, suffixIcon2;
@@ -19,13 +20,14 @@ class InputField extends StatelessWidget {
   final bool passwordhidden;
   final int maxTextLength;
   final Function onPressed;
+  final EdgeInsets padding;
 
   final bool secureText;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
+      padding: padding,
       child: Theme(
         data: Theme.of(context).copyWith(
           primaryColor: Color(0xFFF4D50A),

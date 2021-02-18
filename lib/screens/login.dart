@@ -54,6 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                 hint: 'Enter Email Address',
                 labelText: 'Email',
                 passwordhidden: !passwordVisible,
+                padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
               ),
               InputField(
                 prefixIcon: Icons.lock_outline,
@@ -61,6 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                 labelText: 'Password',
                 passwordhidden: passwordVisible,
                 secureText: passwordToggle,
+                padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
                 onPressed: () {
                   setState(() {
                     passwordToggle = !passwordToggle;
@@ -94,14 +96,20 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(5.0),
-                    child: RichText(
-                      text: TextSpan(
-                        text: 'Don\'t have an account?',
-                        style: TextStyle(color: Color(0xFF9098B1)),
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: ' Register', style: kLabelTextStyleYellow),
-                        ],
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/signup');
+                      },
+                      child: RichText(
+                        text: TextSpan(
+                          text: 'Don\'t have an account?',
+                          style: TextStyle(color: Color(0xFF9098B1)),
+                          children: <TextSpan>[
+                            TextSpan(
+                                text: ' Register',
+                                style: kLabelTextStyleYellow),
+                          ],
+                        ),
                       ),
                     ),
                   ),
