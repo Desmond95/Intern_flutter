@@ -106,7 +106,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   padding: const EdgeInsets.all(5.0),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, '/signup');
+                      Navigator.pushNamed(context, '/login');
                     },
                     child: RichText(
                       text: TextSpan(
