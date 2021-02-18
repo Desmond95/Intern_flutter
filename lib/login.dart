@@ -1,5 +1,8 @@
-import 'package:fast_shop/inputfield.dart';
 import 'package:flutter/material.dart';
+
+import 'component/constant.dart';
+import 'component/inputfield.dart';
+import 'component/square_button.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -11,33 +14,52 @@ class _LoginPageState extends State<LoginPage> {
   bool passwordVisible = true;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 20,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 50, left: 100, right: 100),
+                    child: Image(
+                      image: AssetImage('images/logo.png'),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text(
+                      'Welcome to Dovv',
+                      style: kLabelTextStyleBlue,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text('Sign in to continue',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 12,
+                        )),
+                  ),
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50),
-                child: Image(
-                  image: AssetImage('images/logo.png'),
-                ),
-              ),
-              Text(
-                'Welcome to Dovv',
-              ),
-              Text('Sign in to continue', style: TextStyle()),
               SizedBox(
                 height: 16,
               ),
               InputField(
-                prefixIcon: Icons.lock,
+                prefixIcon: Icons.email_outlined,
+                hint: 'Enter Email Address',
+                labelText: 'Email',
+                passwordhidden: !passwordVisible,
+              ),
+              InputField(
+                prefixIcon: Icons.lock_outline,
                 hint: 'Enter Password',
-                labelText: 'Paswword',
+                labelText: 'Password',
                 passwordhidden: passwordVisible,
                 secureText: passwordToggle,
                 onPressed: () {
@@ -49,6 +71,42 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(
                 height: 20,
+              ),
+              SquareButton(
+                buttonText: 'Sign In',
+                onPress: () {
+                  setState(() {
+                    Navigator.pushNamed(context, '/home');
+                  });
+                },
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text(
+                      'Forgot Password?',
+                      style: kLabelTextStyleYellow,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: RichText(
+                      text: TextSpan(
+                        text: 'Don\'t have an account?',
+                        style: TextStyle(color: Color(0xFF9098B1)),
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: ' Register', style: kLabelTextStyleYellow),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
