@@ -1,38 +1,26 @@
 import 'package:flutter/material.dart';
 
 class CardArticle extends StatelessWidget {
-  CardArticle(
-      {@required this.cardChild,
-      @required this.onPress,
-      @required this.articleitem,
-      @required this.articleImage,
-      @required this.articlePrice});
+  CardArticle({
+    @required this.cardChild,
+    @required this.onPress,
+  });
   final Widget cardChild;
   final Function onPress;
-  final String articleitem;
-  final AssetImage articleImage;
-  final String articlePrice;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: onPress,
-        child: Container(
-          padding: EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.blue,
-          ),
-          child: Column(children: [
-            Image(
-              image: articleImage,
-              width: 125,
-              height: 125,
+    return Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: GestureDetector(
+          onTap: onPress,
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              border: Border.all(color: Colors.blueAccent),
             ),
-            Text(
-              articleitem,
-            ),
-            Text(articlePrice),
-          ]),
-        ));
+            child: cardChild,
+          )),
+    );
   }
 }

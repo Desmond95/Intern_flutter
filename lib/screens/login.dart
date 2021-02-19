@@ -10,7 +10,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool passwordToggle = false;
-  bool passwordVisible = true;
+  bool passwordVisible;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -53,14 +53,16 @@ class _LoginPageState extends State<LoginPage> {
                 prefixIcon: Icons.email_outlined,
                 hint: 'Enter Email Address',
                 labelText: 'Email',
-                passwordhidden: !passwordVisible,
+                passwordhidden: false,
                 padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
               ),
               InputField(
                 prefixIcon: Icons.lock_outline,
                 hint: 'Enter Password',
                 labelText: 'Password',
-                passwordhidden: passwordVisible,
+                passwordhidden: true,
+                suffixIcon: Icons.visibility,
+                suffixIcon2: Icons.visibility_off,
                 secureText: passwordToggle,
                 padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
                 onPressed: () {

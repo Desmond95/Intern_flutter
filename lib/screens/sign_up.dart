@@ -66,6 +66,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   hint: 'Enter Password',
                   labelText: 'Password',
                   passwordhidden: passwordVisible,
+                  suffixIcon: Icons.visibility,
+                  suffixIcon2: Icons.visibility_off,
                   secureText: passwordToggle1,
                   padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
                   onPressed: () {
@@ -80,6 +82,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   hint: 'Enter Password',
                   labelText: 'Password',
                   passwordhidden: passwordVisible,
+                  suffixIcon: Icons.visibility,
+                  suffixIcon2: Icons.visibility_off,
                   secureText: passwordToggle2,
                   padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
                   onPressed: () {
