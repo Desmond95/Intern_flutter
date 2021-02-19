@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class CarouselWidget extends StatelessWidget {
+class CarouselWidgetPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return MyCarousel();
   }
 }
@@ -17,7 +16,7 @@ class MyCarousel extends StatefulWidget {
 class _MyCarouselState extends State<MyCarousel> {
   @override
   Widget build(BuildContext context) {
-   return CarouselSlider(
+    return CarouselSlider(
       options: CarouselOptions(
         height: 200,
         aspectRatio: 2.0,
@@ -32,18 +31,26 @@ class _MyCarouselState extends State<MyCarousel> {
             return Container(
               width: MediaQuery.of(context).size.width,
               margin: EdgeInsets.symmetric(horizontal: 5.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                border: Border.all(color: Colors.blueAccent),
-              ),
+              // decoration: BoxDecoration(
+              //   borderRadius: BorderRadius.circular(10.0),
+              //   border: Border.all(color: Colors.blueAccent),
+              // ),
               child: Stack(
                 children: [
-                  Image(
-                    image: AssetImage('images/item$i.jpg'),
-                    fit: BoxFit.fill,
-                    width: 1000,
-                    height: 1000,
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        // border: Border.all(color: Colors.red),
+                        image: DecorationImage(
+                            image: AssetImage('images/item$i.jpg'),
+                            fit: BoxFit.cover)),
                   ),
+                  // Image(
+                  //   image: AssetImage('images/item$i.jpg'),
+                  //   fit: BoxFit.cover,
+                  //   width: 1000,
+                  //   height: 1000,
+                  //   ),
                   Positioned(
                     bottom: 0.0,
                     left: 0.0,
@@ -80,4 +87,3 @@ class _MyCarouselState extends State<MyCarousel> {
     );
   }
 }
-

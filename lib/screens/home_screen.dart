@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Expanded(
                       child: InputField(
-                        hint: 'Seach Product',
+                        hint: 'Search Product',
                         labelText: null,
                         passwordhidden: false,
                         prefixIcon: Icons.search,
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0, bottom: 10),
-                  child: CarouselWidget(),
+                  child: CarouselWidgetPage(),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0),
