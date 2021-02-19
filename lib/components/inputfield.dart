@@ -43,11 +43,7 @@ class InputField extends StatelessWidget {
             enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Color(0x5F0B0F82))),
             labelText: labelText,
-            labelStyle: TextStyle(
-                //color: Color(0xFF0B0F82),
-                // color: Colors.grey.shade400,
-                fontWeight: FontWeight.bold,
-                fontSize: 17),
+            labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
             hintText: hint,
             prefixIcon: Icon(
               prefixIcon,
@@ -55,9 +51,9 @@ class InputField extends StatelessWidget {
             suffixIcon: IconButton(
               icon: Icon(passwordhidden
                   ? secureText
-                      ? Icons.visibility
-                      : Icons.visibility_off
-                  : null),
+                      ? suffixIcon
+                      : suffixIcon2
+                  : suffixIcon2),
               onPressed: onPressed,
             ),
             border: OutlineInputBorder(),
