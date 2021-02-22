@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Icon(
                       Icons.notifications_outlined,
+                      color: kIconColor,
                       size: 30,
                     )
                   ],
@@ -134,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                                 articleImage:
                                     AssetImage('images/pastries/cakes.jpg'),
                                 articleItem: 'Cake',
-                                articlePrice: '20,000FCFA',
+                                articlePrice: 20000,
                               ),
                             ),
                             CardArticle(
@@ -147,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                                 articleImage: AssetImage(
                                     'images/pastries/vanilla cream.jpg'),
                                 articleItem: 'Chocolate',
-                                articlePrice: '10,000FCFA',
+                                articlePrice: 10000,
                               ),
                             ),
                             CardArticle(
@@ -160,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                                 articleImage:
                                     AssetImage('images/pastries/doughnuts.jpg'),
                                 articleItem: 'Doughnut',
-                                articlePrice: '20,000FCFA',
+                                articlePrice: 20000,
                               ),
                             ),
                             CardArticle(
@@ -173,7 +174,7 @@ class _HomePageState extends State<HomePage> {
                                 articleImage:
                                     AssetImage('images/pastries/hamburger.jpg'),
                                 articleItem: 'Hamburger',
-                                articlePrice: '25,000FCFA',
+                                articlePrice: 25000,
                               ),
                             ),
                           ],
@@ -218,7 +219,7 @@ class _HomePageState extends State<HomePage> {
                               cardChild: ArticleContent(
                                 articleImage: AssetImage('images/bags/bag.jpg'),
                                 articleItem: 'Gucci bag',
-                                articlePrice: '20,000FCFA',
+                                articlePrice: 20000,
                               ),
                             ),
                             CardArticle(
@@ -231,7 +232,7 @@ class _HomePageState extends State<HomePage> {
                                 articleImage:
                                     AssetImage('images/bags/bag2.jpg'),
                                 articleItem: 'Versace',
-                                articlePrice: '10,000FCFA',
+                                articlePrice: 10000,
                               ),
                             ),
                             CardArticle(
@@ -244,7 +245,7 @@ class _HomePageState extends State<HomePage> {
                                 articleImage:
                                     AssetImage('images/bags/bag3.jpg'),
                                 articleItem: 'Quality bag',
-                                articlePrice: '20,000FCFA',
+                                articlePrice: 20000,
                               ),
                             ),
                             CardArticle(
@@ -257,7 +258,7 @@ class _HomePageState extends State<HomePage> {
                                 articleImage:
                                     AssetImage('images/bags/bag4.jpg'),
                                 articleItem: 'Dishes',
-                                articlePrice: '25,000FCFA',
+                                articlePrice: 25000,
                               ),
                             ),
                           ],
@@ -302,7 +303,7 @@ class _HomePageState extends State<HomePage> {
                                 articleImage:
                                     AssetImage('images/fashion/dresses.jpg'),
                                 articleItem: 'Gown',
-                                articlePrice: '20,000FCFA',
+                                articlePrice: 20000,
                               ),
                             ),
                             CardArticle(
@@ -315,7 +316,7 @@ class _HomePageState extends State<HomePage> {
                                 articleImage:
                                     AssetImage('images/fashion/gown.jpg'),
                                 articleItem: 'Gown',
-                                articlePrice: '10,000FCFA',
+                                articlePrice: 10000,
                               ),
                             ),
                             CardArticle(
@@ -328,7 +329,7 @@ class _HomePageState extends State<HomePage> {
                                 articleImage:
                                     AssetImage('images/fashion/gown2.jpg'),
                                 articleItem: 'Gown',
-                                articlePrice: '20,000FCFA',
+                                articlePrice: 20000,
                               ),
                             ),
                             CardArticle(
@@ -341,7 +342,7 @@ class _HomePageState extends State<HomePage> {
                                 articleImage:
                                     AssetImage('images/fashion/robe.jpg'),
                                 articleItem: 'Robe',
-                                articlePrice: '25,000FCFA',
+                                articlePrice: 25000,
                               ),
                             ),
                           ],
@@ -359,7 +360,7 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.home_outlined,
-                color: Colors.grey.shade600,
+                color: kIconColor,
                 size: 24,
               ),
               activeIcon: Icon(
@@ -371,7 +372,7 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.search,
-                color: Colors.grey.shade600,
+                color: kIconColor,
               ),
               activeIcon: Icon(
                 Icons.search,
@@ -382,7 +383,7 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.add_shopping_cart,
-                color: Colors.grey.shade600,
+                color: kIconColor,
               ),
               activeIcon: Icon(
                 Icons.add_shopping_cart,
@@ -393,7 +394,7 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.local_offer_outlined,
-                color: Colors.grey.shade600,
+                color: kIconColor,
               ),
               activeIcon: Icon(
                 Icons.local_offer_outlined,
@@ -404,7 +405,7 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.account_box_outlined,
-                color: Colors.grey.shade600,
+                color: kIconColor,
               ),
               activeIcon: Icon(
                 Icons.account_box_outlined,
