@@ -4,6 +4,7 @@ import 'package:fast_shop/components/carousel_slider.dart';
 import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/horizontal_list.dart';
 import 'package:fast_shop/components/inputfield.dart';
+//import 'package:fast_shop/components/navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -193,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               'See More',
                               style: kLabelTextStyleYellow,
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -259,6 +260,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
+<<<<<<< HEAD
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0),
                   child: Column(
@@ -342,9 +344,69 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
+=======
+                // NavigationBar(),
+>>>>>>> 97460d22d9901706e42ede89ea5439c7882d536a
               ],
             ),
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home_outlined,
+              ),
+              activeIcon: Icon(
+                Icons.home_outlined,
+                color: Color(0xFF40BFF),
+              ),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.search,
+              ),
+              activeIcon: Icon(
+                Icons.search,
+                color: Color(0xFF40BFF),
+              ),
+              label: 'Search',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.add_shopping_cart,
+              ),
+              activeIcon: Icon(
+                Icons.add_shopping_cart,
+                color: Color(0xFF40BFFF),
+              ),
+              label: 'Card',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.local_offer_outlined,
+                
+              ),
+              activeIcon: Icon(
+                Icons.local_offer_outlined,
+                color: Color(0xFF40BFFF),
+              ),
+              label: 'Card',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.account_box_outlined,
+                color: Colors.grey.shade800,
+              ),
+              activeIcon: Icon(
+                Icons.account_box_outlined,
+                color: Color(0xFF40BFFF),
+              ),
+              label: 'Account',
+              //activeIcon:
+            ),
+          ],
         ),
       ),
     );
