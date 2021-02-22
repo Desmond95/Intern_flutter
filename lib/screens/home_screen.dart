@@ -4,9 +4,7 @@ import 'package:fast_shop/components/carousel_slider.dart';
 import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/horizontal_list.dart';
 import 'package:fast_shop/components/inputfield.dart';
-//import 'package:fast_shop/components/navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -23,6 +21,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
+                //top page
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -42,14 +41,15 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
+                //carousel slider
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0, bottom: 10),
                   child: CarouselWidgetPage(),
                 ),
+                //categories
                 Padding(
-                  padding: const EdgeInsets.only(left: 15.0),
-                  child: Column(
-                    children: [
+                    padding: const EdgeInsets.only(left: 15.0),
+                    child: Column(children: [
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Row(
@@ -97,22 +97,26 @@ class _HomePageState extends State<HomePage> {
                                   itemName: 'Shoes',
                                 )
                               ])),
-                      Container(
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Pastries',
-                                style: kLabelTextStyleBlue,
-                              ),
-                              Text(
-                                'See More',
-                                style: kLabelTextStyleYellow,
-                              )
-                            ],
-                          ),
+                    ])), //pastries
+                //pastries
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Pastries',
+                              style: kLabelTextStyleBlue,
+                            ),
+                            Text(
+                              'See More',
+                              style: kLabelTextStyleYellow,
+                            )
+                          ],
                         ),
                       ),
                       SingleChildScrollView(
@@ -178,6 +182,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
+                //bags
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0),
                   child: Column(
@@ -198,6 +203,7 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ),
+                      //bags
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         physics: BouncingScrollPhysics(),
@@ -260,7 +266,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-<<<<<<< HEAD
+                //fashion
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0),
                   child: Column(
@@ -344,9 +350,6 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-=======
-                // NavigationBar(),
->>>>>>> 97460d22d9901706e42ede89ea5439c7882d536a
               ],
             ),
           ),
@@ -356,26 +359,30 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.home_outlined,
+                color: Colors.grey.shade600,
+                size: 24,
               ),
               activeIcon: Icon(
                 Icons.home_outlined,
-                color: Color(0xFF40BFF),
+                color: Color(0xFF40BFFF),
               ),
               label: 'Home',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.search,
+                color: Colors.grey.shade600,
               ),
               activeIcon: Icon(
                 Icons.search,
-                color: Color(0xFF40BFF),
+                color: Color(0xFF40BFFF),
               ),
               label: 'Search',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.add_shopping_cart,
+                color: Colors.grey.shade600,
               ),
               activeIcon: Icon(
                 Icons.add_shopping_cart,
@@ -386,7 +393,7 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.local_offer_outlined,
-                
+                color: Colors.grey.shade600,
               ),
               activeIcon: Icon(
                 Icons.local_offer_outlined,
@@ -397,7 +404,7 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.account_box_outlined,
-                color: Colors.grey.shade800,
+                color: Colors.grey.shade600,
               ),
               activeIcon: Icon(
                 Icons.account_box_outlined,
