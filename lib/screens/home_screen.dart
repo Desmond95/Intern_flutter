@@ -2,8 +2,10 @@ import 'package:fast_shop/components/article_content.dart';
 import 'package:fast_shop/components/card_article.dart';
 import 'package:fast_shop/components/carousel_slider.dart';
 import 'package:fast_shop/components/constants.dart';
+import 'package:fast_shop/components/horizontal_list.dart';
 import 'package:fast_shop/components/inputfield.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -53,7 +55,139 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Pastries',
+                              'Category',
+                              style: kLabelTextStyleBlue,
+                            ),
+                            Text(
+                              'More Categories',
+                              style: kLabelTextStyleYellow,
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                          height: 110,
+                          child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                HorizontalList(
+                                  assetImage:
+                                      AssetImage('images/icons/cake.png'),
+                                  itemName: 'Pastries',
+                                ),
+                                HorizontalList(
+                                  assetImage:
+                                      AssetImage('images/icons/dress.png'),
+                                  itemName: 'Fashion',
+                                ),
+                                HorizontalList(
+                                  assetImage:
+                                      AssetImage('images/icons/man bag.png'),
+                                  itemName: 'Man At Work',
+                                ),
+                                HorizontalList(
+                                  assetImage:
+                                      AssetImage('images/icons/woman bag.png'),
+                                  itemName: 'Bags',
+                                ),
+                                HorizontalList(
+                                  assetImage: AssetImage(
+                                      'images/icons/woman shoes.png'),
+                                  itemName: 'Shoes',
+                                )
+                              ])),
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Pastries',
+                                style: kLabelTextStyleBlue,
+                              ),
+                              Text(
+                                'See More',
+                                style: kLabelTextStyleYellow,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        physics: BouncingScrollPhysics(),
+                        child: Row(
+                          children: [
+                            CardArticle(
+                              onPress: () {
+                                setState(() {
+                                  Navigator.pushNamed(context, '/product');
+                                });
+                              },
+                              cardChild: ArticleContent(
+                                articleImage:
+                                    AssetImage('images/pastries/cakes.jpg'),
+                                articleItem: 'Cake',
+                                articlePrice: '20,000FCFA',
+                              ),
+                            ),
+                            CardArticle(
+                              onPress: () {
+                                setState(() {
+                                  Navigator.pushNamed(context, '/product');
+                                });
+                              },
+                              cardChild: ArticleContent(
+                                articleImage: AssetImage(
+                                    'images/pastries/vanilla cream.jpg'),
+                                articleItem: 'Chocolate',
+                                articlePrice: '10,000FCFA',
+                              ),
+                            ),
+                            CardArticle(
+                              onPress: () {
+                                setState(() {
+                                  Navigator.pushNamed(context, '/product');
+                                });
+                              },
+                              cardChild: ArticleContent(
+                                articleImage:
+                                    AssetImage('images/pastries/doughnuts.jpg'),
+                                articleItem: 'Doughnut',
+                                articlePrice: '20,000FCFA',
+                              ),
+                            ),
+                            CardArticle(
+                              onPress: () {
+                                setState(() {
+                                  Navigator.pushNamed(context, '/product');
+                                });
+                              },
+                              cardChild: ArticleContent(
+                                articleImage:
+                                    AssetImage('images/pastries/hamburger.jpg'),
+                                articleItem: 'Hamburger',
+                                articlePrice: '25,000FCFA',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 15.0),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Bags',
                               style: kLabelTextStyleBlue,
                             ),
                             Text(
@@ -75,8 +209,8 @@ class _HomePageState extends State<HomePage> {
                                 });
                               },
                               cardChild: ArticleContent(
-                                articleImage: AssetImage('images/cakes.jpg'),
-                                articleItem: 'Cake',
+                                articleImage: AssetImage('images/bags/bag.jpg'),
+                                articleItem: 'Gucci bag',
                                 articlePrice: '20,000FCFA',
                               ),
                             ),
@@ -88,8 +222,8 @@ class _HomePageState extends State<HomePage> {
                               },
                               cardChild: ArticleContent(
                                 articleImage:
-                                    AssetImage('images/doughnuts.jpg'),
-                                articleItem: 'Doughnut',
+                                    AssetImage('images/bags/bag2.jpg'),
+                                articleItem: 'Versace',
                                 articlePrice: '10,000FCFA',
                               ),
                             ),
@@ -100,8 +234,9 @@ class _HomePageState extends State<HomePage> {
                                 });
                               },
                               cardChild: ArticleContent(
-                                articleImage: AssetImage('images/pies.jpg'),
-                                articleItem: 'Pies',
+                                articleImage:
+                                    AssetImage('images/bags/bag3.jpg'),
+                                articleItem: 'Quality bag',
                                 articlePrice: '20,000FCFA',
                               ),
                             ),
@@ -112,7 +247,8 @@ class _HomePageState extends State<HomePage> {
                                 });
                               },
                               cardChild: ArticleContent(
-                                articleImage: AssetImage('images/dishes.jpg'),
+                                articleImage:
+                                    AssetImage('images/bags/bag4.jpg'),
                                 articleItem: 'Dishes',
                                 articlePrice: '25,000FCFA',
                               ),
@@ -133,7 +269,7 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Pastries',
+                              'Fashion',
                               style: kLabelTextStyleBlue,
                             ),
                             Text(
@@ -155,8 +291,9 @@ class _HomePageState extends State<HomePage> {
                                 });
                               },
                               cardChild: ArticleContent(
-                                articleImage: AssetImage('images/cakes.jpg'),
-                                articleItem: 'Cake',
+                                articleImage:
+                                    AssetImage('images/fashion/dresses.jpg'),
+                                articleItem: 'Gown',
                                 articlePrice: '20,000FCFA',
                               ),
                             ),
@@ -168,8 +305,8 @@ class _HomePageState extends State<HomePage> {
                               },
                               cardChild: ArticleContent(
                                 articleImage:
-                                    AssetImage('images/doughnuts.jpg'),
-                                articleItem: 'Doughnut',
+                                    AssetImage('images/fashion/gown.jpg'),
+                                articleItem: 'Gown',
                                 articlePrice: '10,000FCFA',
                               ),
                             ),
@@ -180,8 +317,9 @@ class _HomePageState extends State<HomePage> {
                                 });
                               },
                               cardChild: ArticleContent(
-                                articleImage: AssetImage('images/pies.jpg'),
-                                articleItem: 'Pies',
+                                articleImage:
+                                    AssetImage('images/fashion/gown2.jpg'),
+                                articleItem: 'Gown',
                                 articlePrice: '20,000FCFA',
                               ),
                             ),
@@ -192,27 +330,15 @@ class _HomePageState extends State<HomePage> {
                                 });
                               },
                               cardChild: ArticleContent(
-                                articleImage: AssetImage('images/dishes.jpg'),
-                                articleItem: 'Dishes',
+                                articleImage:
+                                    AssetImage('images/fashion/robe.jpg'),
+                                articleItem: 'Robe',
                                 articlePrice: '25,000FCFA',
                               ),
                             ),
                           ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
-                BottomAppBar(
-                  child: Row(
-                    children: [
-                      Icon(Icons.home),
-                      Icon(Icons.search),
-                      Icon(
-                        Icons.add_shopping_cart,
-                      ),
-                      Icon(Icons.local_offer_outlined),
-                      Icon(Icons.account_box_outlined)
                     ],
                   ),
                 ),

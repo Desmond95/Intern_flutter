@@ -42,7 +42,7 @@ class _MyCarouselState extends State<MyCarousel> {
                         borderRadius: BorderRadius.circular(10.0),
                         // border: Border.all(color: Colors.red),
                         image: DecorationImage(
-                            image: AssetImage('images/item$i.jpg'),
+                            image: AssetImage('images/items/item$i.jpg'),
                             fit: BoxFit.cover)),
                   ),
                   // Image(
