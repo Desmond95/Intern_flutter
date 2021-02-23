@@ -1,12 +1,12 @@
-import 'package:fast_shop/screens/activities_page.dart';
+import 'package:fast_shop/screens/notification_activities_page.dart';
 import 'package:fast_shop/screens/home_screen.dart';
 import 'package:fast_shop/screens/login.dart';
-import 'package:fast_shop/screens/notification.dart';
+import 'package:fast_shop/screens/notification_page.dart';
 import 'package:fast_shop/screens/product_detail.dart';
 import 'package:fast_shop/screens/sign_up.dart';
 import 'package:flutter/material.dart';
-import 'package:fast_shop/screens/feed_page.dart';
-import 'package:fast_shop/screens/offer_page.dart';
+import 'package:fast_shop/screens/notification_feed_page.dart';
+import 'package:fast_shop/screens/notification_offer_page.dart';
 import 'onboardingscreen.dart';
 
 void main() {
