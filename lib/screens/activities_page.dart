@@ -1,4 +1,6 @@
 import 'package:fast_shop/components/constants.dart';
+import 'package:fast_shop/components/item_list.dart';
+import 'package:fast_shop/components/notification_widget.dart';
 import 'package:flutter/material.dart';
 
 class ActivitiesPage extends StatefulWidget {
@@ -6,114 +8,51 @@ class ActivitiesPage extends StatefulWidget {
   _ActivitiesPageState createState() => _ActivitiesPageState();
 }
 
+ItemList itemList = ItemList();
+bool feedPage = false;
+
 class _ActivitiesPageState extends State<ActivitiesPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          toolbarHeight: 80,
+          elevation: 1,
           backgroundColor: Colors.white,
-          elevation: 20,
-          iconTheme: IconThemeData(color: Colors.blueGrey[900]),
+          iconTheme: IconThemeData(color: kIconColor),
           title: Text(
             'Activities',
             style: kLabelTextStyleBlue,
           ),
         ),
         body: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.swap_horiz_outlined,
-                    color: Color(0xFFF4D50A),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Nike is more than',
-                          style: kLabelTextStyleBlue,
-                        ),
-                        Text(
-                          'oulala you are amazing',
-                        ),
-                        Text(
-                          'February 23 2021 10:34',
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey[800],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              FeedWidget(
+                icon: Icons.swap_horiz_outlined,
+                topicFeed: 'Transaction Nike Air Zoom Product',
+                textFeed:
+                    'Culpa cillum consectetur labore nulla nulla magna irure. Id veniam culpa officia aute dolor amet deserunt ex proident commodo',
+                dateFeed: 'April 30, 2014 1:01 PM',
+                feedIndex: feedPage,
               ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.swap_horiz_outlined,
-                    color: Color(0xFFF4D50A),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Nike is more than',
-                          style: kLabelTextStyleBlue,
-                        ),
-                        Text(
-                          'oulala you are amazing',
-                        ),
-                        Text(
-                          'February 23 2021 10:34',
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey[800],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              FeedWidget(
+                icon: Icons.swap_horiz_outlined,
+                topicFeed: 'Transaction Nike Air Zoom Product',
+                textFeed:
+                    'Culpa cillum consectetur labore nulla nulla magna irure. Id veniam culpa officia aute dolor amet deserunt ex proident commodo',
+                dateFeed: 'April 30, 2014 1:01 PM',
+                feedIndex: feedPage,
               ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.swap_horiz_outlined,
-                    color: Color(0xFFF4D50A),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Nike is more than',
-                          style: kLabelTextStyleBlue,
-                        ),
-                        Text(
-                          'oulala you are amazing',
-                        ),
-                        Text(
-                          'February 23 2021 10:34',
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey[800],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              FeedWidget(
+                icon: Icons.swap_horiz_outlined,
+                topicFeed: 'Transaction Nike Air Zoom Product',
+                textFeed:
+                    'Culpa cillum consectetur labore nulla nulla magna irure. Id veniam culpa officia aute dolor amet deserunt ex proident commodo',
+                dateFeed: 'April 30, 2014 1:01 PM',
+                feedIndex: feedPage,
               ),
             ],
           ),
