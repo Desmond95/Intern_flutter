@@ -35,9 +35,14 @@ class _HomePageState extends State<HomePage> {
                         padding: EdgeInsets.only(left: 10, right: 10),
                       ),
                     ),
-                    Icon(
-                      Icons.notifications_outlined,
-                      size: 30,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/notification');
+                      },
+                      child: Icon(
+                        Icons.notifications_outlined,
+                        size: 30,
+                      ),
                     )
                   ],
                 ),
