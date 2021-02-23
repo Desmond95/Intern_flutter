@@ -1,4 +1,5 @@
 import 'package:fast_shop/components/constants.dart';
+import 'package:fast_shop/components/notification_widget.dart';
 import 'package:flutter/material.dart';
 
 class OfferPage extends StatefulWidget {
@@ -9,74 +10,49 @@ class OfferPage extends StatefulWidget {
 class _OfferPageState extends State<OfferPage> {
   @override
   Widget build(BuildContext context) {
+    bool feedPage = false;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          toolbarHeight: 80,
+          elevation: 1,
           backgroundColor: Colors.white,
-          elevation: 20,
-          iconTheme: IconThemeData(color: Colors.blueGrey[900]),
+          iconTheme: IconThemeData(color: kIconColor),
           title: Text(
-            'Offer',
+            'Activities',
             style: kLabelTextStyleBlue,
           ),
         ),
-        body: Column(
-          children: [
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(30, 50, 10, 20),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Nike is more than',
-                        style: kLabelTextStyleBlue,
-                      ),
-                      Text(
-                        'oulala you are amazing',
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(30, 50, 10, 20),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Nike is more than',
-                        style: kLabelTextStyleBlue,
-                      ),
-                      Text(
-                        'oulala you are amazing',
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(30, 50, 10, 20),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Nike is more than',
-                        style: kLabelTextStyleBlue,
-                      ),
-                      Text(
-                        'oulala you are amazing',
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
+        body: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              FeedWidget(
+                icon: Icons.local_offer_outlined,
+                topicFeed: 'The Best Title',
+                textFeed:
+                    'Culpa cillum consectetur labore nulla nulla magna irure. Id veniam culpa officia aute dolor amet deserunt ex proident commodo',
+                dateFeed: 'April 30, 2014 1:01 PM',
+                feedIndex: feedPage,
+              ),
+              FeedWidget(
+                icon: Icons.local_offer_outlined,
+                topicFeed: 'SUMMER OFFER 98% Cashback',
+                textFeed:
+                    'Culpa cillum consectetur labore nulla nulla magna irure. Id veniam culpa officia aute dolor',
+                dateFeed: 'April 30, 2014 1:01 PM',
+                feedIndex: feedPage,
+              ),
+              FeedWidget(
+                icon: Icons.local_offer_outlined,
+                topicFeed: 'Special Offer 25% OFF',
+                textFeed:
+                    'Culpa cillum consectetur labore nulla nulla magna irure. Id veniam culpa officia aute dolor amet deserunt ex proident commodo',
+                dateFeed: 'April 30, 2014 1:01 PM',
+                feedIndex: feedPage,
+              ),
+            ],
+          ),
         ),
       ),
     );

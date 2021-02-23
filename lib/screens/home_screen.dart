@@ -1,5 +1,4 @@
 import 'package:fast_shop/components/carousel_slider.dart';
-
 import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/horizontal_list.dart';
 import 'package:fast_shop/components/item_list.dart';
