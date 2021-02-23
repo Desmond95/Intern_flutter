@@ -1,5 +1,5 @@
+import 'package:fast_shop/screens/home_page.dart';
 import 'package:fast_shop/screens/activities_page.dart';
-import 'package:fast_shop/screens/home_screen.dart';
 import 'package:fast_shop/screens/login.dart';
 import 'package:fast_shop/screens/notification.dart';
 import 'package:fast_shop/screens/product_detail.dart';
@@ -19,10 +19,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: Theme.of(context).copyWith(
-        primaryColor: Color(0xFF0B0F82),
-        focusColor: Color(0xFFF4D50A),
-      ),
+      // theme: Theme.of(context).copyWith(
+      //   primaryColor: Color(0xFF0B0F82),
+      //   focusColor: Color(0xFFF4D50A),
+      // ),
       routes: {
         '/login': (context) => LoginPage(),
         '/signup': (context) => SignUpPage(),

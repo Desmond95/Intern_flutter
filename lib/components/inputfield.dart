@@ -1,3 +1,4 @@
+import 'package:fast_shop/components/constants.dart';
 import 'package:flutter/material.dart';
 
 class InputField extends StatelessWidget {
@@ -47,13 +48,17 @@ class InputField extends StatelessWidget {
             hintText: hint,
             prefixIcon: Icon(
               prefixIcon,
+              color: kIconColor,
             ),
             suffixIcon: IconButton(
-              icon: Icon(passwordhidden
-                  ? secureText
-                      ? suffixIcon
-                      : suffixIcon2
-                  : suffixIcon2),
+              icon: Icon(
+                passwordhidden
+                    ? secureText
+                        ? suffixIcon
+                        : suffixIcon2
+                    : suffixIcon2,
+                color: kIconColor,
+              ),
               onPressed: onPressed,
             ),
             border: OutlineInputBorder(),
