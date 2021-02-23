@@ -1,419 +1,146 @@
-import 'package:fast_shop/components/article_content.dart';
-import 'package:fast_shop/components/card_article.dart';
 import 'package:fast_shop/components/carousel_slider.dart';
+
 import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/horizontal_list.dart';
-import 'package:fast_shop/components/inputfield.dart';
+import 'package:fast_shop/components/item_list.dart';
 import 'package:flutter/material.dart';
+import 'package:fast_shop/components/article_widget.dart';
 
-class HomePage extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+ItemList itemList = ItemList();
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                //top page
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: InputField(
-                        hint: 'Search Product',
-                        labelText: null,
-                        passwordhidden: false,
-                        prefixIcon: Icons.search,
-                        suffixIcon2: Icons.send,
-                        padding: EdgeInsets.only(left: 10, right: 10),
-                      ),
+    return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            //carousel slider
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0, bottom: 10),
+              child: CarouselWidgetPage(),
+            ),
+            //categories
+            Padding(
+                padding: const EdgeInsets.only(left: 15.0),
+                child: Column(children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Category',
+                          style: kLabelTextStyleBlue,
+                        ),
+                        Text(
+                          'More Categories',
+                          style: kLabelTextStyleYellow,
+                        )
+                      ],
                     ),
-                    Icon(
-                      Icons.notifications_outlined,
-                      color: kIconColor,
-                      size: 30,
-                    )
-                  ],
-                ),
-                //carousel slider
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0, bottom: 10),
-                  child: CarouselWidgetPage(),
-                ),
-                //categories
-                Padding(
-                    padding: const EdgeInsets.only(left: 15.0),
-                    child: Column(children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Category',
-                              style: kLabelTextStyleBlue,
-                            ),
-                            Text(
-                              'More Categories',
-                              style: kLabelTextStyleYellow,
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                          height: 110,
-                          child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                HorizontalList(
-                                  assetImage:
-                                      AssetImage('images/icons/cake.png'),
-                                  itemName: 'Pastries',
-                                ),
-                                HorizontalList(
-                                  assetImage:
-                                      AssetImage('images/icons/dress.png'),
-                                  itemName: 'Fashion',
-                                ),
-                                HorizontalList(
-                                  assetImage:
-                                      AssetImage('images/icons/man bag.png'),
-                                  itemName: 'Man At Work',
-                                ),
-                                HorizontalList(
-                                  assetImage:
-                                      AssetImage('images/icons/woman bag.png'),
-                                  itemName: 'Bags',
-                                ),
-                                HorizontalList(
-                                  assetImage: AssetImage(
-                                      'images/icons/woman shoes.png'),
-                                  itemName: 'Shoes',
-                                )
-                              ])),
-                    ])), //pastries
-                //pastries
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Pastries',
-                              style: kLabelTextStyleBlue,
-                            ),
-                            Text(
-                              'See More',
-                              style: kLabelTextStyleYellow,
-                            )
-                          ],
-                        ),
-                      ),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        physics: BouncingScrollPhysics(),
-                        child: Row(
-                          children: [
-                            CardArticle(
-                              onPress: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, '/product');
-                                });
-                              },
-                              cardChild: ArticleContent(
-                                articleImage:
-                                    AssetImage('images/pastries/cakes.jpg'),
-                                articleItem: 'Cake',
-                                articlePrice: 20000,
-                              ),
-                            ),
-                            CardArticle(
-                              onPress: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, '/product');
-                                });
-                              },
-                              cardChild: ArticleContent(
-                                articleImage: AssetImage(
-                                    'images/pastries/vanilla cream.jpg'),
-                                articleItem: 'Chocolate',
-                                articlePrice: 10000,
-                              ),
-                            ),
-                            CardArticle(
-                              onPress: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, '/product');
-                                });
-                              },
-                              cardChild: ArticleContent(
-                                articleImage:
-                                    AssetImage('images/pastries/doughnuts.jpg'),
-                                articleItem: 'Doughnut',
-                                articlePrice: 20000,
-                              ),
-                            ),
-                            CardArticle(
-                              onPress: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, '/product');
-                                });
-                              },
-                              cardChild: ArticleContent(
-                                articleImage:
-                                    AssetImage('images/pastries/hamburger.jpg'),
-                                articleItem: 'Hamburger',
-                                articlePrice: 25000,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
                   ),
-                ),
-                //bags
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Bags',
-                              style: kLabelTextStyleBlue,
-                            ),
-                            Text(
-                              'See More',
-                              style: kLabelTextStyleYellow,
-                            ),
-                          ],
+                  Container(
+                      height: 110,
+                      child:
+                          ListView(scrollDirection: Axis.horizontal, children: [
+                        HorizontalList(
+                          padding: EdgeInsets.all(10),
+                          assetImage: itemList.iconItems[0].image,
+                          itemName: itemList.iconItems[0].itemName,
                         ),
-                      ),
-                      //bags
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        physics: BouncingScrollPhysics(),
-                        child: Row(
-                          children: [
-                            CardArticle(
-                              onPress: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, '/product');
-                                });
-                              },
-                              cardChild: ArticleContent(
-                                articleImage: AssetImage('images/bags/bag.jpg'),
-                                articleItem: 'Gucci bag',
-                                articlePrice: 20000,
-                              ),
-                            ),
-                            CardArticle(
-                              onPress: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, '/product');
-                                });
-                              },
-                              cardChild: ArticleContent(
-                                articleImage:
-                                    AssetImage('images/bags/bag2.jpg'),
-                                articleItem: 'Versace',
-                                articlePrice: 10000,
-                              ),
-                            ),
-                            CardArticle(
-                              onPress: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, '/product');
-                                });
-                              },
-                              cardChild: ArticleContent(
-                                articleImage:
-                                    AssetImage('images/bags/bag3.jpg'),
-                                articleItem: 'Quality bag',
-                                articlePrice: 20000,
-                              ),
-                            ),
-                            CardArticle(
-                              onPress: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, '/product');
-                                });
-                              },
-                              cardChild: ArticleContent(
-                                articleImage:
-                                    AssetImage('images/bags/bag4.jpg'),
-                                articleItem: 'Dishes',
-                                articlePrice: 25000,
-                              ),
-                            ),
-                          ],
+                        HorizontalList(
+                          padding: EdgeInsets.all(10),
+                          assetImage: itemList.iconItems[1].image,
+                          itemName: itemList.iconItems[1].itemName,
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                //fashion
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Fashion',
-                              style: kLabelTextStyleBlue,
-                            ),
-                            Text(
-                              'See More',
-                              style: kLabelTextStyleYellow,
-                            )
-                          ],
+                        HorizontalList(
+                          padding: EdgeInsets.all(10),
+                          assetImage: itemList.iconItems[2].image,
+                          itemName: itemList.iconItems[2].itemName,
                         ),
-                      ),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        physics: BouncingScrollPhysics(),
-                        child: Row(
-                          children: [
-                            CardArticle(
-                              onPress: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, '/product');
-                                });
-                              },
-                              cardChild: ArticleContent(
-                                articleImage:
-                                    AssetImage('images/fashion/dresses.jpg'),
-                                articleItem: 'Gown',
-                                articlePrice: 20000,
-                              ),
-                            ),
-                            CardArticle(
-                              onPress: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, '/product');
-                                });
-                              },
-                              cardChild: ArticleContent(
-                                articleImage:
-                                    AssetImage('images/fashion/gown.jpg'),
-                                articleItem: 'Gown',
-                                articlePrice: 10000,
-                              ),
-                            ),
-                            CardArticle(
-                              onPress: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, '/product');
-                                });
-                              },
-                              cardChild: ArticleContent(
-                                articleImage:
-                                    AssetImage('images/fashion/gown2.jpg'),
-                                articleItem: 'Gown',
-                                articlePrice: 20000,
-                              ),
-                            ),
-                            CardArticle(
-                              onPress: () {
-                                setState(() {
-                                  Navigator.pushNamed(context, '/product');
-                                });
-                              },
-                              cardChild: ArticleContent(
-                                articleImage:
-                                    AssetImage('images/fashion/robe.jpg'),
-                                articleItem: 'Robe',
-                                articlePrice: 25000,
-                              ),
-                            ),
-                          ],
+                        HorizontalList(
+                          padding: EdgeInsets.all(10),
+                          assetImage: itemList.iconItems[3].image,
+                          itemName: itemList.iconItems[3].itemName,
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_outlined,
-                color: kIconColor,
-                size: 24,
-              ),
-              activeIcon: Icon(
-                Icons.home_outlined,
-                color: Color(0xFF40BFFF),
-              ),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
-                color: kIconColor,
-              ),
-              activeIcon: Icon(
-                Icons.search,
-                color: Color(0xFF40BFFF),
-              ),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.add_shopping_cart,
-                color: kIconColor,
-              ),
-              activeIcon: Icon(
-                Icons.add_shopping_cart,
-                color: Color(0xFF40BFFF),
-              ),
-              label: 'Card',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.local_offer_outlined,
-                color: kIconColor,
-              ),
-              activeIcon: Icon(
-                Icons.local_offer_outlined,
-                color: Color(0xFF40BFFF),
-              ),
-              label: 'Card',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_box_outlined,
-                color: kIconColor,
-              ),
-              activeIcon: Icon(
-                Icons.account_box_outlined,
-                color: Color(0xFF40BFFF),
-              ),
-              label: 'Account',
-              //activeIcon:
-            ),
+                        HorizontalList(
+                          padding: EdgeInsets.all(10),
+                          assetImage: itemList.iconItems[4].image,
+                          itemName: itemList.iconItems[4].itemName,
+                        ),
+                        HorizontalList(
+                          padding: EdgeInsets.all(10),
+                          assetImage: itemList.iconItems[5].image,
+                          itemName: itemList.iconItems[5].itemName,
+                        )
+                      ])),
+                ])),
+            //pastries
+            //pastries
+            articleWidget(
+                'Pastries',
+                itemList.sweetItems[0].image,
+                itemList.sweetItems[1].image,
+                itemList.sweetItems[2].image,
+                itemList.sweetItems[3].image,
+                itemList.sweetItems[0].itemName,
+                itemList.sweetItems[1].itemName,
+                itemList.sweetItems[2].itemName,
+                itemList.sweetItems[3].itemName,
+                itemList.sweetItems[0].price,
+                itemList.sweetItems[1].price,
+                itemList.sweetItems[2].price,
+                itemList.sweetItems[3].price, () {
+              setState(() {
+                Navigator.pushNamed(context, '/product');
+              });
+            }),
+            //bags
+            articleWidget(
+                'Bags',
+                itemList.bagItems[0].image,
+                itemList.bagItems[1].image,
+                itemList.bagItems[2].image,
+                itemList.bagItems[3].image,
+                itemList.bagItems[0].itemName,
+                itemList.bagItems[1].itemName,
+                itemList.bagItems[2].itemName,
+                itemList.bagItems[3].itemName,
+                itemList.bagItems[0].price,
+                itemList.bagItems[1].price,
+                itemList.bagItems[2].price,
+                itemList.bagItems[3].price, () {
+              setState(() {
+                Navigator.pushNamed(context, '/product');
+              });
+            }),
+            //fashion
+            articleWidget(
+                'Fashion',
+                itemList.fashionItems[0].image,
+                itemList.fashionItems[1].image,
+                itemList.fashionItems[2].image,
+                itemList.fashionItems[3].image,
+                itemList.fashionItems[0].itemName,
+                itemList.fashionItems[1].itemName,
+                itemList.fashionItems[2].itemName,
+                itemList.fashionItems[3].itemName,
+                itemList.fashionItems[0].price,
+                itemList.fashionItems[1].price,
+                itemList.fashionItems[2].price,
+                itemList.fashionItems[3].price, () {
+              setState(() {
+                Navigator.pushNamed(context, '/product');
+              });
+            }),
           ],
         ),
       ),

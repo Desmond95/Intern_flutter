@@ -10,7 +10,7 @@ class ProductDetailPage extends StatefulWidget {
   _ProductDetailPageState createState() => _ProductDetailPageState();
 }
 
-int articlePrice = 20000;
+double articlePrice = 20000;
 
 double articlePromo = articlePrice - (25 / 100 * articlePrice);
 
@@ -20,6 +20,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          bottomOpacity: 0.5,
           toolbarHeight: 80,
           iconTheme: IconThemeData(color: kIconColor),
           backgroundColor: Colors.white,

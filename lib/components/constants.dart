@@ -36,3 +36,9 @@ const kLabelTextStyleYellowArticle = TextStyle(
 const kIconColor = Color(0xFF9098B1);
 
 const kRedColor = Color(0xFFFB7181);
+
+const kLabelCategoryArticle = TextStyle(
+  fontSize: 10.0,
+  color: Color(0xFF9098B1),
+  fontFamily: 'Poppins',
+);

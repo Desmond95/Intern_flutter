@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
-import 'dart:math';
 
 class ArticleContent extends StatelessWidget {
   ArticleContent(
@@ -10,7 +9,7 @@ class ArticleContent extends StatelessWidget {
       this.articlePromoPrice});
   final AssetImage articleImage;
   final String articleItem;
-  final int articlePrice;
+  final double articlePrice;
   final double articlePromoPrice;
 
   @override
