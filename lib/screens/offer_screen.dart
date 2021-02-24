@@ -5,9 +5,9 @@ import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/item_list.dart';
 import 'package:flutter/material.dart';
 
-class ProductDetailPage extends StatefulWidget {
+class OfferScreen extends StatefulWidget {
   @override
-  _ProductDetailPageState createState() => _ProductDetailPageState();
+  _OfferScreenState createState() => _OfferScreenState();
 }
 
 ItemList itemList = ItemList();
@@ -15,7 +15,7 @@ double articlePrice = 20000;
 
 double articlePromo = articlePrice - (25 / 100 * articlePrice);
 
-class _ProductDetailPageState extends State<ProductDetailPage> {
+class _OfferScreenState extends State<OfferScreen> {
   var onPress;
 
   @override
@@ -47,34 +47,25 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            //carousel slider
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0, bottom: 10),
-              child: CarouselWidgetPage(),
-            ),
-            //categories
-
-            Column(children: [
-              Container(
-                height: 220,
-                child: GridView.builder(
-                  itemBuilder: (context, i) => CardArticle(
-                    // cardChild: Text(itemsList[i]),
-                    cardChild: ArticleContent(
-                      articleImage: itemList.promoItems[i].image,
-                      articleItem: itemList.promoItems[i].itemName,
-                      articlePrice: itemList.promoItems[i].price,
-                      articlePromoPrice: itemList.promoItems[i].price -
-                          0.25 * itemList.promoItems[i].price,
-                    ),
-                    onPress: onPress,
+            Container(
+              height: 500,
+              child: GridView.builder(
+                itemBuilder: (context, i) => CardArticle(
+                  // cardChild: Text(itemsList[i]),
+                  cardChild: ArticleContent(
+                    articleImage: itemList.promoItems[i].image,
+                    articleItem: itemList.promoItems[i].itemName,
+                    articlePrice: itemList.promoItems[i].price,
+                    articlePromoPrice: itemList.promoItems[i].price -
+                        0.25 * itemList.promoItems[i].price,
                   ),
-                  itemCount: itemList.promoItems.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, childAspectRatio: 0.75),
+                  onPress: onPress,
                 ),
+                itemCount: itemList.promoItems.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, childAspectRatio: 0.75),
               ),
-            ]),
+            ),
           ],
         ),
       ),

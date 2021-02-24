@@ -1,12 +1,14 @@
-import 'package:fast_shop/screens/home_page.dart';
-import 'package:fast_shop/screens/notification_activities_page.dart';
-import 'package:fast_shop/screens/login.dart';
-import 'package:fast_shop/screens/notification_page.dart';
-import 'package:fast_shop/screens/product_detail.dart';
-import 'package:fast_shop/screens/sign_up.dart';
+import 'package:fast_shop/pages/home_page.dart';
+import 'package:fast_shop/pages/login.dart';
+import 'package:fast_shop/pages/notification_activities_page.dart';
+import 'package:fast_shop/pages/notification_feed_page.dart';
+import 'package:fast_shop/pages/notification_offer_page.dart';
+import 'package:fast_shop/pages/notification_page.dart';
+import 'package:fast_shop/pages/products_page.dart';
+import 'package:fast_shop/pages/sign_up.dart';
+import 'package:fast_shop/screens/cart_screen.dart';
+import 'package:fast_shop/screens/offer_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:fast_shop/screens/notification_feed_page.dart';
-import 'package:fast_shop/screens/notification_offer_page.dart';
 import 'onboardingscreen.dart';
 
 void main() {
@@ -20,18 +22,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: Theme.of(context).copyWith(
-        primaryColor: Color(0xFF0B0F82),
-        focusColor: Color(0xFFF4D50A),
+        primaryColor: Color(0xFFF4D50A),
+        focusColor: Color(0xFF0B0F82),
       ),
       routes: {
         '/login': (context) => LoginPage(),
         '/signup': (context) => SignUpPage(),
         '/home': (context) => HomePage(),
-        '/product': (context) => ProductDetailPage(),
+        '/offer': (context) => OfferScreen(),
         '/notification': (context) => NotificationPage(),
-        '/activities': (context) => NotificationActivitiesPage(),
+        '/notification_activities': (context) => NotificationActivitiesPage(),
         '/feed': (context) => NotificationFeedPage(),
-        '/offer': (context) => NotificationOfferPage(),
+        '/notification_offer': (context) => NotificationOfferPage(),
+        '/product': (context) => ProductPage(),
+        '/cart': (context) => CartScreen(),
       },
       home: Scaffold(
         body: OnBoardingScreen(),

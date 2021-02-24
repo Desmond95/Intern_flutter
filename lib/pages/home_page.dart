@@ -1,8 +1,7 @@
 import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/inputfield.dart';
-import 'package:fast_shop/screens/explore_screen.dart';
 import 'package:fast_shop/screens/home_screen.dart';
-import 'package:fast_shop/screens/product_detail.dart';
+import 'package:fast_shop/screens/offer_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,9 +15,8 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    ExploreScreen(),
+    OfferScreen(),
     Text('Cart Screen'),
-    ProductDetailPage(),
     Text('Profile Screen'),
   ];
 
@@ -80,30 +78,8 @@ class _HomePageState extends State<HomePage> {
               label: 'Home',
               activeIcon: Icon(
                 Icons.home_outlined,
-                color: Color(0xFF40BFFF),
+                color: Color(0xFFF4D50A),
               ),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
-                color: kIconColor,
-              ),
-              activeIcon: Icon(
-                Icons.search,
-                color: Color(0xFF40BFFF),
-              ),
-              label: 'Explore',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.add_shopping_cart,
-                color: kIconColor,
-              ),
-              activeIcon: Icon(
-                Icons.add_shopping_cart,
-                color: Color(0xFF40BFFF),
-              ),
-              label: 'Cart',
             ),
             BottomNavigationBarItem(
               icon: Icon(
@@ -112,18 +88,29 @@ class _HomePageState extends State<HomePage> {
               ),
               activeIcon: Icon(
                 Icons.local_offer_outlined,
-                color: Color(0xFF40BFFF),
+                color: Color(0xFFF4D50A),
               ),
               label: 'Offer',
             ),
             BottomNavigationBarItem(
               icon: Icon(
+                Icons.shopping_cart_outlined,
+                color: kIconColor,
+              ),
+              activeIcon: Icon(
+                Icons.shopping_cart_outlined,
+                color: Color(0xFFF4D50A),
+              ),
+              label: 'Cart',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
                 Icons.person_outline,
                 color: kIconColor,
               ),
               activeIcon: Icon(
                 Icons.person_outline,
-                color: Color(0xFF40BFFF),
+                color: Color(0xFFF4D50A),
               ),
               label: 'Account',
             ),

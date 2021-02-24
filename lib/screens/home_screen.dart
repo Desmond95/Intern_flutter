@@ -38,11 +38,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Text(
                           'Category',
-                          style: kLabelTextStyleBlue,
+                          style: kLabelTextStyleBlueArticle,
                         ),
                         Text(
                           'More Categories',
-                          style: kLabelTextStyleYellow,
+                          style: kLabelTextStyleYellowArticle,
                         )
                       ],
                     ),
@@ -87,17 +87,18 @@ class _HomeScreenState extends State<HomeScreen> {
             //pastries
             Column(children: [
               Padding(
-                padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                padding: const EdgeInsets.only(
+                    left: 8.0, right: 8.0, top: 5, bottom: 5),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       itemList.categoryItems[0],
-                      style: kLabelTextStyleBlue,
+                      style: kLabelTextCategoryStyleBlue,
                     ),
                     Text(
                       'See More',
-                      style: kLabelTextStyleYellow,
+                      style: kLabelTextCategoryStyleYellow,
                     )
                   ],
                 ),
@@ -123,17 +124,18 @@ class _HomeScreenState extends State<HomeScreen> {
             Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  padding: const EdgeInsets.only(
+                      left: 8.0, right: 8.0, top: 5, bottom: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         itemList.categoryItems[1],
-                        style: kLabelTextStyleBlue,
+                        style: kLabelTextCategoryStyleBlue,
                       ),
                       Text(
                         'See More',
-                        style: kLabelTextStyleYellow,
+                        style: kLabelTextCategoryStyleYellow,
                       )
                     ],
                   ),
@@ -149,7 +151,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         articleItem: itemList.bagItems[i].itemName,
                         articlePrice: itemList.bagItems[i].price,
                       ),
-                      onPress: onPress,
+                      onPress: () {
+                        setState(() {
+                          Navigator.pushNamed(context, '/product',
+                              arguments: i);
+                        });
+                      },
                     ),
                     itemCount: itemList.bagItems.length,
                   ),
@@ -160,17 +167,18 @@ class _HomeScreenState extends State<HomeScreen> {
             Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  padding: const EdgeInsets.only(
+                      left: 8.0, right: 8.0, top: 5, bottom: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         itemList.categoryItems[2],
-                        style: kLabelTextStyleBlue,
+                        style: kLabelTextCategoryStyleBlue,
                       ),
                       Text(
                         'See More',
-                        style: kLabelTextStyleYellow,
+                        style: kLabelTextCategoryStyleYellow,
                       )
                     ],
                   ),
