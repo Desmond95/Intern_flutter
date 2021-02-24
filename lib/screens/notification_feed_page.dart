@@ -3,15 +3,15 @@ import 'package:fast_shop/components/item_list.dart';
 import 'package:fast_shop/components/notification_widget.dart';
 import 'package:flutter/material.dart';
 
-class FeedPage extends StatefulWidget {
+class NotificationFeedPage extends StatefulWidget {
   @override
-  _FeedPageState createState() => _FeedPageState();
+  _NotificationFeedPageState createState() => _NotificationFeedPageState();
 }
 
 ItemList itemList = ItemList();
 bool feedPage = true;
 
-class _FeedPageState extends State<FeedPage> {
+class _NotificationFeedPageState extends State<NotificationFeedPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

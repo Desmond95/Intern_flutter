@@ -3,15 +3,17 @@ import 'package:fast_shop/components/item_list.dart';
 import 'package:fast_shop/components/notification_widget.dart';
 import 'package:flutter/material.dart';
 
-class ActivitiesPage extends StatefulWidget {
+class NotificationActivitiesPage extends StatefulWidget {
   @override
-  _ActivitiesPageState createState() => _ActivitiesPageState();
+  _NotificationActivitiesPageState createState() =>
+      _NotificationActivitiesPageState();
 }
 
 ItemList itemList = ItemList();
 bool feedPage = false;
 
-class _ActivitiesPageState extends State<ActivitiesPage> {
+class _NotificationActivitiesPageState
+    extends State<NotificationActivitiesPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
