@@ -2,12 +2,12 @@ import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/notification_widget.dart';
 import 'package:flutter/material.dart';
 
-class OfferPage extends StatefulWidget {
+class NotificationOfferPage extends StatefulWidget {
   @override
-  _OfferPageState createState() => _OfferPageState();
+  _NotificationOfferPageState createState() => _NotificationOfferPageState();
 }
 
-class _OfferPageState extends State<OfferPage> {
+class _NotificationOfferPageState extends State<NotificationOfferPage> {
   @override
   Widget build(BuildContext context) {
     bool feedPage = false;
