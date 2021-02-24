@@ -2,6 +2,7 @@ import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/inputfield.dart';
 import 'package:fast_shop/screens/explore_screen.dart';
 import 'package:fast_shop/screens/home_screen.dart';
+import 'package:fast_shop/screens/product_detail.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,8 +17,8 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     ExploreScreen(),
-    Text('Profile Screen'),
-    Text('Messgaes Screen'),
+    Text('Cart Screen'),
+    ProductDetailPage(),
     Text('Profile Screen'),
   ];
 
@@ -49,9 +50,6 @@ class _HomePageState extends State<HomePage> {
               Icons.search,
               color: kIconColor,
               size: 30,
-            ),
-            SizedBox(
-              width: 10,
             ),
             GestureDetector(
               onTap: () {
@@ -105,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                 Icons.add_shopping_cart,
                 color: Color(0xFF40BFFF),
               ),
-              label: 'Card',
+              label: 'Cart',
             ),
             BottomNavigationBarItem(
               icon: Icon(
@@ -116,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                 Icons.local_offer_outlined,
                 color: Color(0xFF40BFFF),
               ),
-              label: 'Card',
+              label: 'Offer',
             ),
             BottomNavigationBarItem(
               icon: Icon(

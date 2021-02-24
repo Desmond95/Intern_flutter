@@ -29,9 +29,9 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomePage(),
         '/product': (context) => ProductDetailPage(),
         '/notification': (context) => NotificationPage(),
-        '/activities': (context) => ActivitiesPage(),
-        '/feed': (context) => FeedPage(),
-        '/offer': (context) => OfferPage(),
+        '/activities': (context) => NotificationActivitiesPage(),
+        '/feed': (context) => NotificationFeedPage(),
+        '/offer': (context) => NotificationOfferPage(),
       },
       home: Scaffold(
         body: OnBoardingScreen(),

@@ -15,7 +15,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 10.0),
-      child: Column(
+      child: ListView(
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,7 +74,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
           SizedBox(
             height: 20,
           ),
-
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -128,9 +127,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
               )
             ],
           ),
-
-          //categories
-          //categories
         ],
       ),
     );
