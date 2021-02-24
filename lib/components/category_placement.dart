@@ -25,7 +25,7 @@ class _CategoryPlacementState extends State<CategoryPlacement> {
                 cardChild: ArticleContent(
                   articleImage: AssetImage('images/cakes.jpg'),
                   articleItem: 'Cake',
-                  articlePrice: '20,000FCFA',
+                  articlePrice: 20000,
                 ),
               ),
             ],

@@ -47,7 +47,7 @@ flutter:
     - images/bags/
     - images/fashion/
     - images/icons/
-    - images/items/
+    - images/promo/
     - images/pastries/
 
   # An image asset can refer to one or more resolution-specific "variants", see

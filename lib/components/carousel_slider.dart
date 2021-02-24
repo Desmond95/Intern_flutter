@@ -42,7 +42,7 @@ class _MyCarouselState extends State<MyCarousel> {
                         borderRadius: BorderRadius.circular(10.0),
                         // border: Border.all(color: Colors.red),
                         image: DecorationImage(
-                            image: AssetImage('images/items/item$i.jpg'),
+                            image: AssetImage('images/promo/promo$i.jpg'),
                             fit: BoxFit.cover)),
                   ),
                   // Image(
@@ -69,7 +69,7 @@ class _MyCarouselState extends State<MyCarousel> {
                       padding: EdgeInsets.symmetric(
                           vertical: 10.0, horizontal: 20.0),
                       child: Text(
-                        'No. $i image',
+                        'Promo $i',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,

@@ -1,5 +1,5 @@
+import 'package:fast_shop/screens/home_page.dart';
 import 'package:fast_shop/screens/notification_activities_page.dart';
-import 'package:fast_shop/screens/home_screen.dart';
 import 'package:fast_shop/screens/login.dart';
 import 'package:fast_shop/screens/notification_page.dart';
 import 'package:fast_shop/screens/product_detail.dart';

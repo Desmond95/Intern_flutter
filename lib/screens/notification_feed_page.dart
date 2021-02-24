@@ -1,10 +1,15 @@
 import 'package:fast_shop/components/constants.dart';
+import 'package:fast_shop/components/item_list.dart';
+import 'package:fast_shop/components/notification_widget.dart';
 import 'package:flutter/material.dart';
 
 class FeedPage extends StatefulWidget {
   @override
   _FeedPageState createState() => _FeedPageState();
 }
+
+ItemList itemList = ItemList();
+bool feedPage = true;
 
 class _FeedPageState extends State<FeedPage> {
   @override
@@ -13,8 +18,9 @@ class _FeedPageState extends State<FeedPage> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
-          elevation: 20,
-          iconTheme: IconThemeData(color: Colors.blueGrey[900]),
+          toolbarHeight: 80,
+          elevation: 1,
+          iconTheme: IconThemeData(color: kIconColor),
           title: Text(
             'Feed',
             style: kLabelTextStyleBlue,
@@ -24,98 +30,29 @@ class _FeedPageState extends State<FeedPage> {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              Row(
-                children: [
-                  Image(
-                    image: AssetImage('images/bags/bag.jpg'),
-                    width: 48,
-                    height: 48,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Column(
-                      children: [
-                        Text(
-                          'New product',
-                          style: kLabelTextStyleBlue,
-                        ),
-                        Text(
-                          'Cake is a nice one',
-                        ),
-                        Text(
-                          'February 23 2021 10:34',
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey[800],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              FeedWidget(
+                feedImage: itemList.bagItems[0].image,
+                textFeed:
+                    'Nike Air Zoom Pegasus 36 Miami - Special For your Activity',
+                topicFeed: 'New Product',
+                dateFeed: 'January 23 2021 10:34',
+                feedIndex: feedPage,
               ),
-              Row(
-                children: [
-                  Image(
-                    image: AssetImage('images/bags/bag3.jpg'),
-                    width: 48,
-                    height: 48,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Column(
-                      children: [
-                        Text(
-                          'New product',
-                          style: kLabelTextStyleBlue,
-                        ),
-                        Text(
-                          'Cake is a nice one',
-                        ),
-                        Text(
-                          'February 23 2021 10:34',
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey[800],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              FeedWidget(
+                feedImage: itemList.bagItems[1].image,
+                textFeed:
+                    'Nike Air Zoom Pegasus 36 Miami - Special For your Activity',
+                topicFeed: 'New Product',
+                dateFeed: 'January 23 2021 10:34',
+                feedIndex: feedPage,
               ),
-              Row(
-                children: [
-                  Image(
-                    image: AssetImage('images/bags/bag5.jpg'),
-                    width: 48,
-                    height: 48,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Column(
-                      children: [
-                        Text(
-                          'New product',
-                          style: kLabelTextStyleBlue,
-                        ),
-                        Text(
-                          'Cake is a nice one',
-                        ),
-                        Text(
-                          'February 23 2021 10:34',
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey[800],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              FeedWidget(
+                feedImage: itemList.bagItems[2].image,
+                textFeed:
+                    'Nike Air Zoom Pegasus 36 Miami - Special For your Activity',
+                topicFeed: 'New Product',
+                dateFeed: 'January 23 2021 10:34',
+                feedIndex: feedPage,
               ),
             ],
           ),
