@@ -203,4 +203,5 @@ class ItemList {
       false,
     ),
   ];
+  List<String> categoryItems = ['Pastries', 'Bags', 'Fashion'];
 }

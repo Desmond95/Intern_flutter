@@ -70,7 +70,7 @@ Padding articleWidget(
               ),
               CardArticle(
                 onPress: onPress,
-                // onPress: () {
+                // () {
                 //   setState(() {
                 //     Navigator.pushNamed(context, '/product');
                 //   });

@@ -1,9 +1,10 @@
+import 'package:fast_shop/components/article_content.dart';
+import 'package:fast_shop/components/card_article.dart';
 import 'package:fast_shop/components/carousel_slider.dart';
 import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/horizontal_list.dart';
 import 'package:fast_shop/components/item_list.dart';
 import 'package:flutter/material.dart';
-import 'package:fast_shop/components/article_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -84,65 +85,119 @@ class _HomeScreenState extends State<HomeScreen> {
                 ])),
             //pastries
             //pastries
-            articleWidget(
-                'Pastries',
-                itemList.sweetItems[0].image,
-                itemList.sweetItems[1].image,
-                itemList.sweetItems[2].image,
-                itemList.sweetItems[3].image,
-                itemList.sweetItems[0].itemName,
-                itemList.sweetItems[1].itemName,
-                itemList.sweetItems[2].itemName,
-                itemList.sweetItems[3].itemName,
-                itemList.sweetItems[0].price,
-                itemList.sweetItems[1].price,
-                itemList.sweetItems[2].price,
-                itemList.sweetItems[3].price, () {
-              setState(() {
-                Navigator.pushNamed(context, '/product');
-              });
-            }),
+            Column(children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      itemList.categoryItems[0],
+                      style: kLabelTextStyleBlue,
+                    ),
+                    Text(
+                      'See More',
+                      style: kLabelTextStyleYellow,
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                height: 187,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, i) => CardArticle(
+                    // cardChild: Text(itemsList[i]),
+                    cardChild: ArticleContent(
+                      articleImage: itemList.sweetItems[i].image,
+                      articleItem: itemList.sweetItems[i].itemName,
+                      articlePrice: itemList.sweetItems[i].price,
+                    ),
+                    onPress: onPress,
+                  ),
+                  itemCount: itemList.sweetItems.length,
+                ),
+              ),
+            ]),
             //bags
-            articleWidget(
-                'Bags',
-                itemList.bagItems[0].image,
-                itemList.bagItems[1].image,
-                itemList.bagItems[2].image,
-                itemList.bagItems[3].image,
-                itemList.bagItems[0].itemName,
-                itemList.bagItems[1].itemName,
-                itemList.bagItems[2].itemName,
-                itemList.bagItems[3].itemName,
-                itemList.bagItems[0].price,
-                itemList.bagItems[1].price,
-                itemList.bagItems[2].price,
-                itemList.bagItems[3].price, () {
-              setState(() {
-                Navigator.pushNamed(context, '/product');
-              });
-            }),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        itemList.categoryItems[1],
+                        style: kLabelTextStyleBlue,
+                      ),
+                      Text(
+                        'See More',
+                        style: kLabelTextStyleYellow,
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 187,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, i) => CardArticle(
+                      // cardChild: Text(itemsList[i]),
+                      cardChild: ArticleContent(
+                        articleImage: itemList.bagItems[i].image,
+                        articleItem: itemList.bagItems[i].itemName,
+                        articlePrice: itemList.bagItems[i].price,
+                      ),
+                      onPress: onPress,
+                    ),
+                    itemCount: itemList.bagItems.length,
+                  ),
+                ),
+              ],
+            ),
             //fashion
-            articleWidget(
-                'Fashion',
-                itemList.fashionItems[0].image,
-                itemList.fashionItems[1].image,
-                itemList.fashionItems[2].image,
-                itemList.fashionItems[3].image,
-                itemList.fashionItems[0].itemName,
-                itemList.fashionItems[1].itemName,
-                itemList.fashionItems[2].itemName,
-                itemList.fashionItems[3].itemName,
-                itemList.fashionItems[0].price,
-                itemList.fashionItems[1].price,
-                itemList.fashionItems[2].price,
-                itemList.fashionItems[3].price, () {
-              setState(() {
-                Navigator.pushNamed(context, '/product');
-              });
-            }),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        itemList.categoryItems[2],
+                        style: kLabelTextStyleBlue,
+                      ),
+                      Text(
+                        'See More',
+                        style: kLabelTextStyleYellow,
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 187,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, i) => CardArticle(
+                      // cardChild: Text(itemsList[i]),
+                      cardChild: ArticleContent(
+                        articleImage: itemList.fashionItems[i].image,
+                        articleItem: itemList.fashionItems[i].itemName,
+                        articlePrice: itemList.fashionItems[i].price,
+                      ),
+                      onPress: onPress,
+                    ),
+                    itemCount: itemList.fashionItems.length,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
     );
   }
+
+  onPress() {}
 }
