@@ -5,6 +5,7 @@ class Items {
   String itemName;
   double price;
   bool promo;
+
   // double promoPrice;
 
   Items(

@@ -16,7 +16,7 @@ class CardArticle extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: BorderRadius.circular(5.0),
               border: Border.all(color: Colors.blue.shade100),
             ),
             child: cardChild,

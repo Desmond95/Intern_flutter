@@ -11,7 +11,7 @@ class SquareButton extends StatelessWidget {
         onPressed: onPress,
         elevation: 5.0,
         constraints: BoxConstraints.tightFor(
-          width: 300.0,
+          width: double.infinity,
           height: 60.0,
         ),
         shape: RoundedRectangleBorder(
