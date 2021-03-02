@@ -11,38 +11,13 @@ class OfferScreen extends StatefulWidget {
 }
 
 ItemList itemList = ItemList();
-double articlePrice = 20000;
-
-double articlePromo = articlePrice - (25 / 100 * articlePrice);
 
 class _OfferScreenState extends State<OfferScreen> {
   var onPress;
 
   @override
   Widget build(BuildContext context) {
-    return
-        // child: Scaffold(
-        // appBar: AppBar(
-        //   bottomOpacity: 0.5,
-        //   toolbarHeight: 80,
-        //   iconTheme: IconThemeData(color: kIconColor),
-        //   backgroundColor: Colors.white,
-        //   title: Text(
-        //     'Super Flash Sale',
-        //     style: kLabelTextStyleBlue,
-        //   ),
-        //   actions: [
-        //     Padding(
-        //       padding: const EdgeInsets.all(8.0),
-        //       child: Icon(
-        //         Icons.search,
-        //         color: kIconColor,
-        //         size: 40,
-        //       ),
-        //     )
-        //   ],
-        // ),
-        SingleChildScrollView(
+    return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

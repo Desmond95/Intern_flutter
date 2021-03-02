@@ -12,6 +12,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 ItemList itemList = ItemList();
+// Widget myFunction() {
+//   for (int i = 0; i <= itemList.categoryItems.length; i++) {
+//     for (int j = 0; i <= itemList.; j++)
+//   }
+// }
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -84,42 +89,49 @@ class _HomeScreenState extends State<HomeScreen> {
                       ])),
                 ])),
             //pastries
-            //pastries
-            Column(children: [
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 8.0, right: 8.0, top: 5, bottom: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      itemList.categoryItems[0],
-                      style: kLabelTextCategoryStyleBlue,
-                    ),
-                    Text(
-                      'See More',
-                      style: kLabelTextCategoryStyleYellow,
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                height: 187,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, i) => CardArticle(
-                    // cardChild: Text(itemsList[i]),
-                    cardChild: ArticleContent(
-                      articleImage: itemList.sweetItems[i].image,
-                      articleItem: itemList.sweetItems[i].itemName,
-                      articlePrice: itemList.sweetItems[i].price,
-                    ),
-                    onPress: onPress,
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 8.0, right: 8.0, top: 5, bottom: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        itemList.categoryItems[0],
+                        style: kLabelTextCategoryStyleBlue,
+                      ),
+                      Text(
+                        'See More',
+                        style: kLabelTextCategoryStyleYellow,
+                      )
+                    ],
                   ),
-                  itemCount: itemList.sweetItems.length,
                 ),
-              ),
-            ]),
+                Container(
+                  height: 187,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, i) => CardArticle(
+                      // cardChild: Text(itemsList[i]),
+                      cardChild: ArticleContent(
+                        articleImage: itemList.sweetItems[i].image,
+                        articleItem: itemList.sweetItems[i].itemName,
+                        articlePrice: itemList.sweetItems[i].price,
+                      ),
+                      onPress: () {
+                        setState(() {
+                          Navigator.pushNamed(context, '/product',
+                              arguments: i);
+                        });
+                      },
+                    ),
+                    itemCount: itemList.sweetItems.length,
+                  ),
+                ),
+              ],
+            ),
+
             //bags
             Column(
               children: [

@@ -101,7 +101,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   SquareButton(
                     buttonText: 'Sign Up',
                     onPress: () {
-                      Navigator.pushNamed(context, '/home');
+                      Navigator.pushNamed(context, '/home', arguments: 0);
                     },
                   ),
 

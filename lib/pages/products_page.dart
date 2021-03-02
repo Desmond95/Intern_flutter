@@ -1,27 +1,30 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fast_shop/components/carousel_slider.dart';
+import 'package:fast_shop/components/add_cart.dart';
 import 'package:fast_shop/components/category_container.dart';
+// import 'package:fast_shop/components/category_container.dart';
 import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/item_list.dart';
 import 'package:fast_shop/components/square_button.dart';
+import 'package:fast_shop/screens/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class ProductPage extends StatelessWidget {
-  // ProductPage(this.i);
-  // final int i;
-
   @override
   Widget build(BuildContext context) {
     return Product();
   }
 }
 
+void createCart() {}
+
 class Product extends StatefulWidget {
   @override
   _ProductState createState() => _ProductState();
 }
 
+int data = 2;
 IconData _iconHeart = Icons.favorite_outline;
 double rating = 0;
 Color _color;
@@ -33,9 +36,6 @@ class _ProductState extends State<Product> {
   ItemList itemList = ItemList();
   @override
   Widget build(BuildContext context) {
-    // final AssetImage image = ModalRoute.of(context).settings.arguments;
-    //  final String productName = ModalRoute.of(context).settings.arguments;
-    //   final String productPrice = ModalRoute.of(context).settings.arguments;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -96,7 +96,7 @@ class _ProductState extends State<Product> {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: map<Widget>(itemList.promoItems, (index, url) {
+                    children: map<Widget>(itemList.bagItems, (index, url) {
                       return Container(
                         width: 10.0,
                         height: 10.0,
@@ -251,8 +251,7 @@ class _ProductState extends State<Product> {
                     buttonText: 'Add to Cart',
                     onPress: () {
                       setState(() {
-                        Navigator.pushNamed(context, '/home',
-                            arguments: 'cartpage');
+                        Navigator.pushNamed(context, '/home', arguments: data);
                       });
                     },
                   )

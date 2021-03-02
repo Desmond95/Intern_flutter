@@ -1,36 +1,40 @@
 import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/inputfield.dart';
+import 'package:fast_shop/screens/account_screen.dart';
+import 'package:fast_shop/screens/cart_screen.dart';
 import 'package:fast_shop/screens/home_screen.dart';
 import 'package:fast_shop/screens/offer_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
+  int data;
+  HomePage({Key key, @required this.data}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePageState createState() => _HomePageState(data);
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
-  List<Widget> _widgetOptions = <Widget>[
+  int data;
+  int _selectedIndex;
+  _HomePageState(this.data);
+  List<Widget> _widgetOptions = [
     HomeScreen(),
     OfferScreen(),
-    Text('Cart Screen'),
-    Text('Profile Screen'),
+    CartScreen(),
+    AccountScreen(),
   ];
 
   void _onItemTap(int index) {
     setState(() {
-      _selectedIndex = index;
+      data = index;
     });
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
+  Widget appBarFunction() {
+    switch (data) {
+      case 0:
+        return AppBar(
           toolbarHeight: 80,
           elevation: 0,
           backgroundColor: Colors.white,
@@ -44,27 +48,84 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.only(left: 0, right: 0),
           ),
           actions: [
+            Row(
+              children: [
+                Icon(
+                  Icons.search,
+                  color: kIconColor,
+                  size: 30,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      Navigator.pushNamed(context, '/notification');
+                    });
+                  },
+                  child: Icon(
+                    Icons.notifications_outlined,
+                    color: kIconColor,
+                    size: 30,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        );
+      case 1:
+        return AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.white,
+          elevation: 1,
+          iconTheme: IconThemeData(color: kIconColor),
+          title: Text(
+            'Super Flash Sales',
+            style: kLabelTextStyleBlue,
+          ),
+          actions: [
             Icon(
               Icons.search,
               color: kIconColor,
               size: 30,
-            ),
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  Navigator.pushNamed(context, '/notification');
-                });
-              },
-              child: Icon(
-                Icons.notifications_outlined,
-                color: kIconColor,
-                size: 30,
-              ),
             )
           ],
-        ),
+        );
+      case 2:
+        return AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.white,
+          elevation: 1,
+          iconTheme: IconThemeData(color: kIconColor),
+          title: Text(
+            'Your Cart',
+            style: kLabelTextStyleBlue,
+          ),
+        );
+      case 3:
+        return AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.white,
+          elevation: 1,
+          iconTheme: IconThemeData(color: kIconColor),
+          title: Text(
+            'Account',
+            style: kLabelTextStyleBlue,
+          ),
+        );
+      default:
+        return AppBar(
+          title: Text('Error'),
+        );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        appBar: appBarFunction(),
         body: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
+          child: _widgetOptions.elementAt(data),
+          // child: Text('$sentArgument'),
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
@@ -115,7 +176,7 @@ class _HomePageState extends State<HomePage> {
               label: 'Account',
             ),
           ],
-          currentIndex: _selectedIndex,
+          currentIndex: data,
           onTap: _onItemTap,
         ),
       ),

@@ -8,6 +8,8 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 
+int data = 1;
+
 class _LoginPageState extends State<LoginPage> {
   bool passwordToggle = false;
   bool passwordVisible;
@@ -81,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                   buttonText: 'Sign In',
                   onPress: () {
                     setState(() {
-                      Navigator.pushNamed(context, '/home');
+                      Navigator.of(context).pushNamed('/home', arguments: 0);
                     });
                   },
                 ),
@@ -110,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                             style: TextStyle(color: Color(0xFF9098B1)),
                             children: <TextSpan>[
                               TextSpan(
-                                  text: ' Register',
+                                  text: 'Register',
                                   style: kLabelTextStyleYellow),
                             ],
                           ),
