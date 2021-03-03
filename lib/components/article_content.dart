@@ -23,7 +23,7 @@ class ArticleContent extends StatelessWidget {
               width: 100,
               height: 100,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
+                  borderRadius: BorderRadius.circular(5.0),
                   //  border: Border.all(color: Colors.red),
                   image: DecorationImage(
                     image: articleImage,
