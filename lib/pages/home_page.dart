@@ -7,7 +7,7 @@ import 'package:fast_shop/screens/offer_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  int data;
+  final int data;
   HomePage({Key key, @required this.data}) : super(key: key);
 
   @override
@@ -16,7 +16,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int data;
-  int _selectedIndex;
   _HomePageState(this.data);
   List<Widget> _widgetOptions = [
     HomeScreen(),
@@ -144,6 +143,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       data = 0;
     });
+    return null;
   }
 
   @override

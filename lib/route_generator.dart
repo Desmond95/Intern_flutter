@@ -12,10 +12,8 @@ import 'package:fast_shop/pages/payment_page.dart';
 import 'package:fast_shop/pages/products_page.dart';
 import 'package:fast_shop/pages/profile_page.dart';
 import 'package:fast_shop/pages/sign_up.dart';
-import 'package:fast_shop/screens/cart_screen.dart';
 import 'package:fast_shop/screens/offer_screen.dart';
 import 'package:flutter/material.dart';
-import 'main.dart';
 import 'pages/notification_feed_page.dart';
 
 class RouteGenerator {
@@ -46,8 +44,6 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => NotificationOfferPage());
       case '/product':
         return MaterialPageRoute(builder: (_) => ProductPage());
-      case '/cart':
-        return MaterialPageRoute(builder: (_) => CartScreen());
       case '/add_address':
         return MaterialPageRoute(builder: (_) => AddAddressPage());
       case '/change_password':
@@ -58,8 +54,6 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => OMPage());
       case '/profile':
         return MaterialPageRoute(builder: (_) => ProfilePage());
-      case '/cart_screen':
-        return MaterialPageRoute(builder: (_) => CartScreen());
       case '/payment':
         return MaterialPageRoute(builder: (_) => PaymentPage());
 

@@ -112,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                             style: TextStyle(color: Color(0xFF9098B1)),
                             children: <TextSpan>[
                               TextSpan(
-                                  text: 'Register',
+                                  text: ' Register',
                                   style: kLabelTextStyleYellow),
                             ],
                           ),
