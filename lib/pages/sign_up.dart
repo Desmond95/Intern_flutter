@@ -126,20 +126,6 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                   ),
-                  // RaisedButton(
-                  //   onPressed: () {
-                  //     Navigator.pushNamed(context, '/login');
-                  //   },
-                  //   child: Text(
-                  //     'Sign up',
-                  //     style: TextStyle(
-                  //       color: Colors.white,
-                  //       fontWeight: FontWeight.bold,
-                  //       fontSize: 30.0,
-                  //     ),
-                  //   ),
-                  //   color: Color(0xFFF6D819),
-                  // ),
                 ],
               ),
             ]),

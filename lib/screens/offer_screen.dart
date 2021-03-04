@@ -1,7 +1,5 @@
 import 'package:fast_shop/components/article_content.dart';
 import 'package:fast_shop/components/card_article.dart';
-import 'package:fast_shop/components/carousel_slider.dart';
-import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/item_list.dart';
 import 'package:flutter/material.dart';
 
