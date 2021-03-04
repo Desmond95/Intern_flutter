@@ -17,7 +17,6 @@ class _ProfilePageState extends State<ProfilePage> {
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 1,
-          toolbarHeight: 80,
           iconTheme: IconThemeData(color: kIconColor),
           title: Text(
             'Profile',

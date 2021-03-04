@@ -8,6 +8,8 @@ import 'package:fast_shop/pages/momo_page.dart';
 import 'package:fast_shop/pages/notification_activities_page.dart';
 import 'package:fast_shop/pages/notification_offer_page.dart';
 import 'package:fast_shop/pages/notification_page.dart';
+import 'package:fast_shop/pages/order_details.dart';
+import 'package:fast_shop/pages/order_page.dart';
 import 'package:fast_shop/pages/payment_page.dart';
 import 'package:fast_shop/pages/products_page.dart';
 import 'package:fast_shop/pages/profile_page.dart';
@@ -56,7 +58,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => ProfilePage());
       case '/payment':
         return MaterialPageRoute(builder: (_) => PaymentPage());
-
+      case '/orders':
+        return MaterialPageRoute(builder: (_) => OrderPage());
+      case '/order_details':
+        return MaterialPageRoute(builder: (_) => OrderDetailsPage());
       default:
         return _errorRoute();
     }

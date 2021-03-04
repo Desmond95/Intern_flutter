@@ -12,13 +12,12 @@ class ChangePasswordPage extends StatefulWidget {
 }
 
 class _ChangePasswordPageState extends State<ChangePasswordPage> {
-  bool passwordVisible = true;
   bool passwordVisible1 = true;
   bool passwordVisible2 = true;
-  bool passwordToggle1 = false;
-  bool passwordToggle2 = false;
   bool passwordVisible3 = true;
-  bool passwordToggle3 = false;
+  bool passwordToggle1 = true;
+  bool passwordToggle2 = true;
+  bool passwordToggle3 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -52,16 +51,16 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                       prefixIcon: Icons.lock_outline,
                       hint: 'Enter Password',
                       labelText: 'Password',
-                      passwordhidden: passwordVisible,
+                      passwordhidden: passwordVisible1,
                       suffixIcon: Icons.visibility,
                       suffixIcon2: Icons.visibility_off,
-                      secureText: passwordToggle2,
+                      secureText: passwordToggle1,
                       padding:
                           const EdgeInsets.only(left: 30, right: 30, top: 10),
                       onPressed: () {
                         setState(() {
-                          passwordToggle2 = !passwordToggle1;
-                          passwordVisible2 = !passwordVisible1;
+                          passwordToggle1 = !passwordToggle1;
+                          passwordVisible1 = !passwordVisible1;
                         });
                       },
                     ),
@@ -74,7 +73,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                       prefixIcon: Icons.lock_outline,
                       hint: 'Enter Password',
                       labelText: 'Password',
-                      passwordhidden: passwordVisible,
+                      passwordhidden: passwordVisible2,
                       suffixIcon: Icons.visibility,
                       suffixIcon2: Icons.visibility_off,
                       secureText: passwordToggle2,
@@ -96,16 +95,16 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                       prefixIcon: Icons.lock_outline,
                       hint: 'Enter Password',
                       labelText: 'Password',
-                      passwordhidden: passwordVisible,
+                      passwordhidden: passwordVisible3,
                       suffixIcon: Icons.visibility,
                       suffixIcon2: Icons.visibility_off,
-                      secureText: passwordToggle2,
+                      secureText: passwordToggle3,
                       padding:
                           const EdgeInsets.only(left: 30, right: 30, top: 10),
                       onPressed: () {
                         setState(() {
-                          passwordToggle2 = !passwordToggle3;
-                          passwordVisible2 = !passwordVisible3;
+                          passwordToggle3 = !passwordToggle3;
+                          passwordVisible3 = !passwordVisible3;
                         });
                       },
                     ),

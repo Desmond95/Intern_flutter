@@ -285,16 +285,16 @@ _displayDialog(BuildContext context) {
         return AlertDialog(
           title: Text('Add To Cart'),
           actions: <Widget>[
-            FlatButton(
+            TextButton(
               child: Text('CANCEL'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
-            FlatButton(
+            TextButton(
               child: Text('ADD'),
               onPressed: () {
-                Navigator.pushNamed(context, '/home', arguments: data);
+                Navigator.popAndPushNamed(context, '/home', arguments: data);
               },
             )
           ],
