@@ -30,7 +30,7 @@ class _AccountScreenState extends State<AccountScreen> {
               )),
           GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/feed');
+              Navigator.pushNamed(context, '/orders');
             },
             child: ListTile(
               leading: Icon(
@@ -39,7 +39,7 @@ class _AccountScreenState extends State<AccountScreen> {
                 size: 30,
               ),
               title: Text(
-                'Others',
+                'Orders',
                 style: kLabelTextStyleBlue,
               ),
             ),
