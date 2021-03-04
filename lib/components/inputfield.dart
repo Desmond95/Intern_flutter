@@ -1,9 +1,11 @@
+import 'dart:ui';
+
 import 'package:fast_shop/components/constants.dart';
 import 'package:flutter/material.dart';
 
 class InputField extends StatelessWidget {
   InputField({
-    @required this.prefixIcon,
+    this.prefixIcon,
     this.suffixIcon,
     @required this.hint,
     @required this.labelText,
@@ -13,6 +15,7 @@ class InputField extends StatelessWidget {
     this.suffixIcon2,
     this.secureText,
     this.padding,
+    this.textInputType,
   });
 
   final IconData prefixIcon, suffixIcon, suffixIcon2;
@@ -22,6 +25,7 @@ class InputField extends StatelessWidget {
   final int maxTextLength;
   final Function onPressed;
   final EdgeInsets padding;
+  final TextInputType textInputType;
 
   final bool secureText;
 
@@ -34,6 +38,8 @@ class InputField extends StatelessWidget {
           primaryColor: Color(0xFFF4D50A),
         ),
         child: TextField(
+          scrollPadding: EdgeInsets.zero,
+          selectionHeightStyle: BoxHeightStyle.max,
           decoration: InputDecoration(
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
@@ -63,7 +69,7 @@ class InputField extends StatelessWidget {
             ),
             border: OutlineInputBorder(),
           ),
-          keyboardType: TextInputType.emailAddress,
+          keyboardType: textInputType,
           obscureText: passwordhidden,
           maxLength: maxTextLength,
         ),

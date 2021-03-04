@@ -23,9 +23,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  font_awesome_flutter: ^8.11.0
   carousel_slider: ^3.0.0
   cupertino_icons: ^1.0.0
+  font_awesome_flutter: ^8.11.0
   smooth_star_rating: ^1.1.1
 
 dev_dependencies:

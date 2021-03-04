@@ -12,13 +12,13 @@ class ChangePasswordPage extends StatefulWidget {
 }
 
 class _ChangePasswordPageState extends State<ChangePasswordPage> {
-  bool passwordVisible = true;
+  //bool passwordVisible = true;
   bool passwordVisible1 = true;
   bool passwordVisible2 = true;
-  bool passwordToggle1 = false;
-  bool passwordToggle2 = false;
   bool passwordVisible3 = true;
-  bool passwordToggle3 = false;
+  bool passwordToggle1 = true;
+  bool passwordToggle2 = true;
+  bool passwordToggle3 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -40,41 +40,41 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
             padding: EdgeInsets.all(20),
             child: Column(children: [
               Container(
-                padding: EdgeInsets.all(10),
+                //padding: EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Previous Password',
-                      style: kLabelTextStyleBlue,
-                    ),
+                    // Text(
+                    //   'Previous Password',
+                    //   style: kLabelTextStyleBlue,
+                    // ),
                     InputField(
                       prefixIcon: Icons.lock_outline,
                       hint: 'Enter Password',
-                      labelText: 'Password',
-                      passwordhidden: passwordVisible,
+                      labelText: 'Previous Password',
+                      passwordhidden: passwordVisible1,
                       suffixIcon: Icons.visibility,
                       suffixIcon2: Icons.visibility_off,
-                      secureText: passwordToggle2,
+                      secureText: passwordToggle1,
                       padding:
                           const EdgeInsets.only(left: 30, right: 30, top: 10),
                       onPressed: () {
                         setState(() {
-                          passwordToggle2 = !passwordToggle1;
-                          passwordVisible2 = !passwordVisible1;
+                          passwordToggle1 = !passwordToggle1;
+                          passwordVisible1 = !passwordVisible1;
                         });
                       },
                     ),
                     Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-                    Text(
-                      'New Password',
-                      style: kLabelTextStyleBlue,
-                    ),
+                    // Text(
+                    //   'New Password',
+                    //   style: kLabelTextStyleBlue,
+                    // ),
                     InputField(
                       prefixIcon: Icons.lock_outline,
                       hint: 'Enter Password',
-                      labelText: 'Password',
-                      passwordhidden: passwordVisible,
+                      labelText: 'New Password',
+                      passwordhidden: passwordVisible2,
                       suffixIcon: Icons.visibility,
                       suffixIcon2: Icons.visibility_off,
                       secureText: passwordToggle2,
@@ -88,24 +88,24 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                       },
                     ),
                     Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 5)),
-                    Text(
-                      'Confirm ',
-                      style: kLabelTextStyleBlue,
-                    ),
+                    // Text(
+                    //   'Confirm ',
+                    //   style: kLabelTextStyleBlue,
+                    // ),
                     InputField(
                       prefixIcon: Icons.lock_outline,
                       hint: 'Enter Password',
-                      labelText: 'Password',
-                      passwordhidden: passwordVisible,
+                      labelText: 'Confirm',
+                      passwordhidden: passwordVisible3,
                       suffixIcon: Icons.visibility,
                       suffixIcon2: Icons.visibility_off,
-                      secureText: passwordToggle2,
+                      secureText: passwordToggle3,
                       padding:
                           const EdgeInsets.only(left: 30, right: 30, top: 10),
                       onPressed: () {
                         setState(() {
-                          passwordToggle2 = !passwordToggle3;
-                          passwordVisible2 = !passwordVisible3;
+                          passwordToggle3 = !passwordToggle3;
+                          passwordVisible3 = !passwordVisible3;
                         });
                       },
                     ),

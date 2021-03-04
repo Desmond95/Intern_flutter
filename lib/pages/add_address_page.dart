@@ -1,5 +1,6 @@
 //import 'dart:html';
 
+import 'package:fast_shop/components/inputfield.dart';
 import 'package:flutter/material.dart';
 import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/square_button.dart';
@@ -11,6 +12,8 @@ class AddAddressPage extends StatefulWidget {
 }
 
 class _AddAddressPageState extends State<AddAddressPage> {
+  bool passwordVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,159 +31,63 @@ class _AddAddressPageState extends State<AddAddressPage> {
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Padding(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(30),
             child: Column(children: [
               Container(
                 padding: EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'First Name',
-                      style: kLabelTextStyleBlue,
+                    InputField(
+                      hint: 'Fist Name',
+                      labelText: 'First Name',
+                      passwordhidden: !passwordVisible,
+                      secureText: false,
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
                     ),
-                    TextField(
-                      decoration: InputDecoration(
-                        // helperText: 'Please',
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFFF4D50A),
-                            width: 1,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                      ),
+                    InputField(
+                      hint: 'Last Name',
+                      labelText: 'Last Name',
+                      passwordhidden: !passwordVisible,
+                      secureText: false,
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
                     ),
-                    Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-                    Text(
-                      'Last Name',
-                      style: kLabelTextStyleBlue,
+                    InputField(
+                      hint: 'Street Address',
+                      labelText: 'Street Adress',
+                      passwordhidden: !passwordVisible,
+                      secureText: false,
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
                     ),
-                    TextField(
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFFF4D50A),
-                            width: 1,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                      ),
+                    InputField(
+                      hint: 'City',
+                      labelText: 'City',
+                      passwordhidden: !passwordVisible,
+                      secureText: false,
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
                     ),
-                    Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 5)),
-                    Text(
-                      'Street Address',
-                      style: kLabelTextStyleBlue,
+                    InputField(
+                      hint: 'Region',
+                      labelText: 'Region',
+                      passwordhidden: !passwordVisible,
+                      secureText: false,
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
                     ),
-                    TextField(
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFFF4D50A),
-                            width: 1,
-                          ),
-                        ),
-                        suffixIcon: Icon(Icons.arrow_drop_down_outlined),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 5)),
-                    Text(
-                      'Streeet Address 2 (Optional)',
-                      style: kLabelTextStyleBlue,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFFF4D50A),
-                            width: 1,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 5)),
-                    Text(
-                      'City',
-                      style: kLabelTextStyleBlue,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFFF4D50A),
-                            width: 1,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 5)),
-                    Text(
-                      'State/Province/Region',
-                      style: kLabelTextStyleBlue,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFFF4D50A),
-                            width: 1,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 5)),
-                    Text(
-                      'Zip Code',
-                      style: kLabelTextStyleBlue,
-                    ),
-                    TextField(
-                      keyboardType: TextInputType.numberWithOptions(),
-                      maxLength: 4,
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFFF4D50A),
-                            width: 1,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0)),
-                    Text(
-                      'Phone Number',
-                      style: kLabelTextStyleBlue,
-                    ),
-                    TextField(
-                      keyboardType: TextInputType.numberWithOptions(),
-                      maxLength: 9,
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFFF4D50A),
-                            width: 1,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                      ),
+                    InputField(
+                      prefixIcon: Icons.account_box_outlined,
+                      hint: 'Phone Number',
+                      labelText: 'Phone Nuumber',
+                      passwordhidden: !passwordVisible,
+                      secureText: false,
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
+                      maxTextLength: 9,
+                      textInputType: TextInputType.numberWithOptions(),
                     ),
                     Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 5)),
                     SquareButton(
                       buttonText: 'Add Address',
                       onPress: () {
-                        Navigator.pushNamed(context, '/home');
+                        Navigator.pushNamed(context, '/home', arguments: 3);
                       },
                     ),
                   ],

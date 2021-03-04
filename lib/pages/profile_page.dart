@@ -27,189 +27,125 @@ class _ProfilePageState extends State<ProfilePage> {
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Padding(
-            padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+            padding: EdgeInsets.fromLTRB(20, 20, 20, 5),
             child: Column(
               children: [
                 Container(
                   width: 150,
-                  height: 150,
+                  height: 125,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CircleAvatar(
+                        backgroundImage: AssetImage(
+                          'images/profil 3.jpg',
+                        ),
                         radius: 50,
-                        backgroundColor: Colors.pink,
                       ),
                       Text(
                         'Ornella',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 20,
                         ),
                       ),
                     ],
                   ),
                 ),
-                // TextField(
-                //   decoration: InputDecoration(
-                //     suffixIcon: Icon(
-                //       Icons.arrow_drop_down_outlined,
-                //       size: 30,
-                //     ),
-                //     prefixIcon: Icon(
-                //       Icons.gesture_rounded,
+                ListTile(
+                  leading: Icon(
+                    Icons.arrow_forward_ios_outlined,
+                    color: Color(0xFFF4D50A),
+                  ),
+                  title: Text(
+                    'Gender',
+                    style: kLabelTextStyleBlue,
+                  ),
+                  trailing: Icon(
+                    Icons.keyboard_arrow_right_outlined,
+                    size: 30,
+                  ),
+                ),
+                // Row(
+                //   children: [
+                //     Icon(
+                //       Icons.arrow_forward_ios_outlined,
                 //       color: Color(0xFFF4D50A),
                 //     ),
-                //     // helperText: 'Please',
-                //     focusedBorder: OutlineInputBorder(
-                //       borderSide: BorderSide(
-                //         color: Color(0xFFF4D50A),
-                //         width: 1,
+                //     Padding(
+                //       padding: EdgeInsets.all(20),
+                //       child: Text(
+                //         'Gender',
+                //         style: kLabelTextStyleBlue,
                 //       ),
                 //     ),
-                //     enabledBorder: OutlineInputBorder(
-                //         borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                //   ),
-                // ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.gesture_rounded,
-                      color: Color(0xFFF4D50A),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(20),
-                      child: Text(
-                        'Gender',
-                        style: kLabelTextStyleBlue,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(150, 0, 0, 0),
-                      child: Icon(
-                        Icons.arrow_drop_down_outlined,
-                        size: 30,
-                      ),
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.calendar_today_outlined,
-                      color: Color(0xFFF4D50A),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(20),
-                      child: Text(
-                        'Birthday',
-                        style: kLabelTextStyleBlue,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(140, 0, 0, 0),
-                      child: Icon(
-                        Icons.arrow_drop_down_outlined,
-                        size: 30,
-                      ),
-                    )
-                  ],
-                ),
-                // TextField(
-                //   decoration: InputDecoration(
-                //     labelText: 'Email',
-                //     prefixIcon: Icon(
-                //       Icons.mail_outline_outlined,
-                //       color: Color(0xFFF4D50A),
-                //     ),
-                //     // helperText: 'Please',
-                //     focusedBorder: OutlineInputBorder(
-                //       borderSide: BorderSide(
-                //         color: Color(0xFFF4D50A),
-                //         width: 1,
+                //     Padding(
+                //       padding: const EdgeInsets.fromLTRB(150, 0, 0, 0),
+                //       child: Icon(
+                //         Icons.keyboard_arrow_right_outlined,
+                //         size: 30,
                 //       ),
-                //     ),
-                //     enabledBorder: OutlineInputBorder(
-                //         borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                //   ),
+                //     )
+                //   ],
                 // ),
+                ListTile(
+                  leading: Icon(
+                    Icons.calendar_today_outlined,
+                    color: Color(0xFFF4D50A),
+                  ),
+                  title: Text(
+                    'Birthday',
+                    style: kLabelTextStyleBlue,
+                  ),
+                  trailing: Icon(
+                    Icons.keyboard_arrow_right_outlined,
+                    size: 30,
+                  ),
+                ),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, '/addaddress');
                   },
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.mail_outline_outlined,
-                        color: Color(0xFFF4D50A),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(20),
-                        child: Text(
-                          'Email',
-                          style: kLabelTextStyleBlue,
-                        ),
-                      ),
-                    ],
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.mail_outline_outlined,
+                      color: Color(0xFFF4D50A),
+                    ),
+                    title: Text(
+                      'Email',
+                      style: kLabelTextStyleBlue,
+                    ),
                   ),
                 ),
-                // Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 10)),
-                // TextField(
-                //   decoration: InputDecoration(
-                //     labelText: 'Phone Number',
-                //     prefixIcon: Icon(
-                //       Icons.phone_android_outlined,
-                //       color: Color(0xFFF4D50A),
-                //     ),
-                //     // helperText: 'Please',
-                //     focusedBorder: OutlineInputBorder(
-                //       borderSide: BorderSide(
-                //         color: Color(0xFFF4D50A),
-                //         width: 1,
-                //       ),
-                //     ),
-                //     enabledBorder: OutlineInputBorder(
-                //         borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                //   ),
-                // ),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, '/payement');
                   },
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.phone_android_outlined,
-                        color: Color(0xFFF4D50A),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(20),
-                        child: Text(
-                          'Phone Number',
-                          style: kLabelTextStyleBlue,
-                        ),
-                      ),
-                    ],
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.phone_android_outlined,
+                      color: Color(0xFFF4D50A),
+                    ),
+                    title: Text(
+                      'Phone Number',
+                      style: kLabelTextStyleBlue,
+                    ),
                   ),
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/changepassword');
+                    Navigator.pushNamed(context, '/change_password');
                   },
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.lock_outline,
-                        color: Color(0xFFF4D50A),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(20),
-                        child: Text(
-                          'Change password',
-                          style: kLabelTextStyleBlue,
-                        ),
-                      ),
-                    ],
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.lock_outline,
+                      color: Color(0xFFF4D50A),
+                    ),
+                    title: Text(
+                      'Change password',
+                      style: kLabelTextStyleBlue,
+                    ),
                   ),
                 ),
                 Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 10)),
@@ -221,18 +157,6 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ],
             ),
-            // child: Scaffold(
-            //   appBar: AppBar(
-            //     backgroundColor: Colors.white,
-            //     elevation: 1,
-            //     toolbarHeight: 80,
-            //     iconTheme: IconThemeData(color: kIconColor),
-            //     title: Text(
-            //       'Account',
-            //       style: kLabelTextStyleBlue,
-            //     ),
-            //   ),
-            // ),
           ),
         ),
       ),

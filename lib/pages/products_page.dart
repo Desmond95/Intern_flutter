@@ -1,10 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fast_shop/components/carousel_slider.dart';
-//import 'package:fast_shop/components/category_container.dart';
+// import 'package:fast_shop/components/add_cart.dart';
+// import 'package:fast_shop/components/category_container.dart';
 // import 'package:fast_shop/components/category_container.dart';
 import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/item_list.dart';
 import 'package:fast_shop/components/square_button.dart';
+import 'package:fast_shop/screens/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
@@ -14,6 +16,10 @@ class ProductPage extends StatelessWidget {
     return Product();
   }
 }
+
+CartScreen cartScreen = CartScreen();
+
+void createCart() {}
 
 class Product extends StatefulWidget {
   @override
@@ -247,7 +253,7 @@ class _ProductState extends State<Product> {
                     buttonText: 'Add to Cart',
                     onPress: () {
                       setState(() {
-                        Navigator.pushNamed(context, '/home', arguments: data);
+                        _displayDialog(context);
                       });
                     },
                   )
@@ -271,4 +277,28 @@ class _ProductState extends State<Product> {
       }
     });
   }
+}
+
+_displayDialog(BuildContext context) {
+  return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Add To Cart'),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('CANCEL'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            FlatButton(
+              child: Text('ADD'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/home', arguments: data);
+              },
+            )
+          ],
+        );
+      });
 }
