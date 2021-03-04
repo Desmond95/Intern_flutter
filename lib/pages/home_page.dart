@@ -118,66 +118,97 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  Future<bool> _onBackPressed() {
+    return showDialog(
+          context: context,
+          builder: (context) => new AlertDialog(
+            title: new Text('Are you sure?'),
+            content: new Text('Do you want to exit an App'),
+            actions: [
+              new GestureDetector(
+                onTap: () => Navigator.of(context).pop(false),
+                child: Text("NO"),
+              ),
+              SizedBox(height: 16),
+              new GestureDetector(
+                onTap: () => Navigator.of(context).pop(true),
+                child: Text("YES"),
+              ),
+            ],
+          ),
+        ) ??
+        false;
+  }
+
+  Future<bool> _onBackPressedToHome() {
+    setState(() {
+      data = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        appBar: appBarFunction(),
-        body: Center(
-          child: _widgetOptions.elementAt(data),
-          // child: Text('$sentArgument'),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_outlined,
-                color: kIconColor,
-                size: 24,
+      child: WillPopScope(
+        onWillPop: data == 0 ? _onBackPressed : _onBackPressedToHome,
+        child: Scaffold(
+          appBar: appBarFunction(),
+          body: Center(
+            child: _widgetOptions.elementAt(data),
+            // child: Text('$sentArgument'),
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home_outlined,
+                  color: kIconColor,
+                  size: 24,
+                ),
+                label: 'Home',
+                activeIcon: Icon(
+                  Icons.home_outlined,
+                  color: Color(0xFFF4D50A),
+                ),
               ),
-              label: 'Home',
-              activeIcon: Icon(
-                Icons.home_outlined,
-                color: Color(0xFFF4D50A),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.local_offer_outlined,
+                  color: kIconColor,
+                ),
+                activeIcon: Icon(
+                  Icons.local_offer_outlined,
+                  color: Color(0xFFF4D50A),
+                ),
+                label: 'Offer',
               ),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.local_offer_outlined,
-                color: kIconColor,
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.shopping_cart_outlined,
+                  color: kIconColor,
+                ),
+                activeIcon: Icon(
+                  Icons.shopping_cart_outlined,
+                  color: Color(0xFFF4D50A),
+                ),
+                label: 'Cart',
               ),
-              activeIcon: Icon(
-                Icons.local_offer_outlined,
-                color: Color(0xFFF4D50A),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.person_outline,
+                  color: kIconColor,
+                ),
+                activeIcon: Icon(
+                  Icons.person_outline,
+                  color: Color(0xFFF4D50A),
+                ),
+                label: 'Account',
               ),
-              label: 'Offer',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.shopping_cart_outlined,
-                color: kIconColor,
-              ),
-              activeIcon: Icon(
-                Icons.shopping_cart_outlined,
-                color: Color(0xFFF4D50A),
-              ),
-              label: 'Cart',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person_outline,
-                color: kIconColor,
-              ),
-              activeIcon: Icon(
-                Icons.person_outline,
-                color: Color(0xFFF4D50A),
-              ),
-              label: 'Account',
-            ),
-          ],
-          currentIndex: data,
-          onTap: _onItemTap,
+            ],
+            currentIndex: data,
+            onTap: _onItemTap,
+          ),
         ),
       ),
     );
