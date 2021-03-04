@@ -18,8 +18,10 @@ class _CartWidgetState extends State<CartWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(5.0),
       child: Container(
+        height: 100,
+        // margin: EdgeInsets.all(15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           border: Border.all(color: Colors.blue.shade100),
@@ -55,13 +57,14 @@ class _CartWidgetState extends State<CartWidget> {
                             IconButton(
                               icon: Icon(_iconHeart),
                               padding: EdgeInsets.zero,
-                              iconSize: 30,
+                              color: _color,
+                              iconSize: 24,
                               onPressed: onPress,
                             ),
                             IconButton(
                               icon: Icon(Icons.delete_outline),
                               padding: EdgeInsets.zero,
-                              iconSize: 30,
+                              iconSize: 24,
                               onPressed: () {},
                             ),
                           ],
@@ -70,63 +73,66 @@ class _CartWidgetState extends State<CartWidget> {
                     ),
                   ),
                   Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '$price',
-                          style: kLabelTextStyleYellow,
-                        ),
-                        Container(
-                          width: 150,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              border: Border.all(color: Colors.blue.shade100),
-                              color: Colors.blue.shade100),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Expanded(
-                                child: Card(
-                                  margin: EdgeInsets.zero,
-                                  elevation: 2,
-                                  child: IconButton(
-                                      constraints: BoxConstraints(
-                                        maxWidth: 20,
-                                        maxHeight: 30,
-                                      ),
-                                      iconSize: 30,
-                                      padding: EdgeInsets.zero,
-                                      icon: Icon(Icons.play_disabled),
-                                      onPressed: onPressSubtract),
-                                ),
-                              ),
-                              Expanded(
-                                child: Text(
-                                  '$itemCount',
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                              Expanded(
-                                child: Card(
-                                  margin: EdgeInsets.zero,
-                                  elevation: 2,
-                                  child: IconButton(
-                                    padding: EdgeInsets.zero,
-                                    constraints: BoxConstraints(
-                                      maxWidth: 20,
-                                      maxHeight: 30,
-                                    ),
-                                    iconSize: 30,
-                                    icon: Icon(Icons.add),
-                                    onPressed: onPressAdd,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            '$price',
+                            style: kLabelTextStyleYellow,
+                          ),
+                          Container(
+                            width: 100,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                border: Border.all(color: Colors.blue.shade100),
+                                color: Colors.blue.shade100),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                  child: Card(
+                                    margin: EdgeInsets.zero,
+                                    elevation: 2,
+                                    child: IconButton(
+                                        constraints: BoxConstraints(
+                                          maxWidth: 25,
+                                          maxHeight: 25,
+                                        ),
+                                        iconSize: 24,
+                                        padding: EdgeInsets.zero,
+                                        icon: Icon(Icons.remove),
+                                        onPressed: onPressSubtract),
                                   ),
                                 ),
-                              )
-                            ],
+                                Expanded(
+                                  child: Text(
+                                    '$itemCount',
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Card(
+                                    margin: EdgeInsets.zero,
+                                    elevation: 2,
+                                    child: IconButton(
+                                      padding: EdgeInsets.zero,
+                                      constraints: BoxConstraints(
+                                        maxWidth: 25,
+                                        maxHeight: 25,
+                                      ),
+                                      iconSize: 24,
+                                      icon: Icon(Icons.add),
+                                      onPressed: onPressAdd,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   )
                 ],

@@ -17,6 +17,8 @@ class ProductPage extends StatelessWidget {
   }
 }
 
+CartScreen cartScreen = CartScreen();
+
 void createCart() {}
 
 class Product extends StatefulWidget {
@@ -251,7 +253,7 @@ class _ProductState extends State<Product> {
                     buttonText: 'Add to Cart',
                     onPress: () {
                       setState(() {
-                        Navigator.pushNamed(context, '/home', arguments: data);
+                        _displayDialog(context);
                       });
                     },
                   )
@@ -275,4 +277,28 @@ class _ProductState extends State<Product> {
       }
     });
   }
+}
+
+_displayDialog(BuildContext context) {
+  return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Add To Cart'),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('CANCEL'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            FlatButton(
+              child: Text('ADD'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/home', arguments: data);
+              },
+            )
+          ],
+        );
+      });
 }

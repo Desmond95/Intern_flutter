@@ -50,27 +50,6 @@ class _ProfilePageState extends State<ProfilePage> {
                     ],
                   ),
                 ),
-                // TextField(
-                //   decoration: InputDecoration(
-                //     suffixIcon: Icon(
-                //       Icons.arrow_drop_down_outlined,
-                //       size: 30,
-                //     ),
-                //     prefixIcon: Icon(
-                //       Icons.gesture_rounded,
-                //       color: Color(0xFFF4D50A),
-                //     ),
-                //     // helperText: 'Please',
-                //     focusedBorder: OutlineInputBorder(
-                //       borderSide: BorderSide(
-                //         color: Color(0xFFF4D50A),
-                //         width: 1,
-                //       ),
-                //     ),
-                //     enabledBorder: OutlineInputBorder(
-                //         borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                //   ),
-                // ),
                 Row(
                   children: [
                     Icon(
@@ -115,24 +94,6 @@ class _ProfilePageState extends State<ProfilePage> {
                     )
                   ],
                 ),
-                // TextField(
-                //   decoration: InputDecoration(
-                //     labelText: 'Email',
-                //     prefixIcon: Icon(
-                //       Icons.mail_outline_outlined,
-                //       color: Color(0xFFF4D50A),
-                //     ),
-                //     // helperText: 'Please',
-                //     focusedBorder: OutlineInputBorder(
-                //       borderSide: BorderSide(
-                //         color: Color(0xFFF4D50A),
-                //         width: 1,
-                //       ),
-                //     ),
-                //     enabledBorder: OutlineInputBorder(
-                //         borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                //   ),
-                // ),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, '/addaddress');
@@ -153,25 +114,6 @@ class _ProfilePageState extends State<ProfilePage> {
                     ],
                   ),
                 ),
-                // Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 10)),
-                // TextField(
-                //   decoration: InputDecoration(
-                //     labelText: 'Phone Number',
-                //     prefixIcon: Icon(
-                //       Icons.phone_android_outlined,
-                //       color: Color(0xFFF4D50A),
-                //     ),
-                //     // helperText: 'Please',
-                //     focusedBorder: OutlineInputBorder(
-                //       borderSide: BorderSide(
-                //         color: Color(0xFFF4D50A),
-                //         width: 1,
-                //       ),
-                //     ),
-                //     enabledBorder: OutlineInputBorder(
-                //         borderSide: BorderSide(color: Color(0x5F0B0F82))),
-                //   ),
-                // ),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, '/payement');
@@ -194,7 +136,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/changepassword');
+                    Navigator.pushNamed(context, '/change_password');
                   },
                   child: Row(
                     children: [
@@ -221,18 +163,6 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ],
             ),
-            // child: Scaffold(
-            //   appBar: AppBar(
-            //     backgroundColor: Colors.white,
-            //     elevation: 1,
-            //     toolbarHeight: 80,
-            //     iconTheme: IconThemeData(color: kIconColor),
-            //     title: Text(
-            //       'Account',
-            //       style: kLabelTextStyleBlue,
-            //     ),
-            //   ),
-            // ),
           ),
         ),
       ),

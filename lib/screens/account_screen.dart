@@ -95,18 +95,6 @@ class _AccountScreenState extends State<AccountScreen> {
           ),
         ],
       ),
-      // child: Scaffold(
-      //   appBar: AppBar(
-      //     backgroundColor: Colors.white,
-      //     elevation: 1,
-      //     toolbarHeight: 80,
-      //     iconTheme: IconThemeData(color: kIconColor),
-      //     title: Text(
-      //       'Account',
-      //       style: kLabelTextStyleBlue,
-      //     ),
-      //   ),
-      // ),
     );
   }
 }

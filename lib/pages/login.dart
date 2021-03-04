@@ -11,8 +11,8 @@ class LoginPage extends StatefulWidget {
 int data = 1;
 
 class _LoginPageState extends State<LoginPage> {
-  bool passwordToggle = false;
-  bool passwordVisible;
+  bool passwordToggle = true;
+  bool passwordVisible = true;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                   prefixIcon: Icons.lock_outline,
                   hint: 'Enter Password',
                   labelText: 'Password',
-                  passwordhidden: true,
+                  passwordhidden: passwordVisible,
                   suffixIcon: Icons.visibility,
                   suffixIcon2: Icons.visibility_off,
                   secureText: passwordToggle,
