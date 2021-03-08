@@ -1,5 +1,5 @@
-import 'package:fast_shop/components/category_container.dart';
 import 'package:flutter/material.dart';
+import 'package:fast_shop/components/item_list.dart';
 
 import 'constants.dart';
 
@@ -8,13 +8,13 @@ class CartWidget extends StatefulWidget {
   _CartWidgetState createState() => _CartWidgetState();
 }
 
-IconData _iconHeart = Icons.favorite_outline;
-bool isPressed = false;
-int itemCount = 1;
-Color _color;
-int price;
-
 class _CartWidgetState extends State<CartWidget> {
+  ItemList itemList = ItemList();
+  IconData _iconHeart = Icons.favorite_outline;
+  bool isPressed = false;
+  int itemCount = 1;
+  Color _color;
+  int price;
   @override
   Widget build(BuildContext context) {
     return Padding(

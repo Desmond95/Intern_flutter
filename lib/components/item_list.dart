@@ -1,12 +1,6 @@
-//import 'package:fast_shop/components/category_container.dart';
-import 'package:fast_shop/components/list_views.dart';
 import 'package:flutter/material.dart';
 
 import 'items.dart';
-
-double price;
-
-double promoPrice = price - 25 / 100 * price;
 
 class ItemList {
   List<Items> bagItems = [
@@ -172,6 +166,36 @@ class ItemList {
       15000,
       false,
     ),
+    Items(
+      AssetImage('images/promo/promo4.jpg'),
+      'item4',
+      150000,
+      false,
+    ),
+    Items(
+      AssetImage('images/promo/promo5.jpg'),
+      'HP laptop',
+      350000,
+      false,
+    ),
+    Items(
+      AssetImage('images/promo/promo6.jpg'),
+      'Louis Vuitton Sneakers',
+      35000,
+      false,
+    ),
+    Items(
+      AssetImage('images/promo/promo7.jpg'),
+      'King Size Mattress',
+      205000,
+      false,
+    ),
+    Items(
+      AssetImage('images/promo/promo8.jpg'),
+      'iPhone 12pro max',
+      650000,
+      false,
+    ),
   ];
   List<Items> sweetItems = [
     Items(
@@ -206,111 +230,4 @@ class ItemList {
     ),
   ];
   List<String> categoryItems = ['Pastries', 'Bags', 'Fashion', 'Shoes'];
-
-  List<ViewList> listItems = [
-    ViewList(<Items>[
-      Items(AssetImage('images/bags/bag1.jpg'), 'bag1', 15000, false),
-      Items(AssetImage('images/bags/bag2.jpg'), 'bag1', 15000, false),
-      Items(AssetImage('images/bags/bag3.jpg'), 'bag1', 15000, false),
-      Items(AssetImage('images/bags/bag4.jpg'), 'bag1', 15000, false),
-      Items(AssetImage('images/bags/bag5.jpg'), 'bag1', 15000, false),
-    ]),
-    ViewList(<Items>[
-      Items(AssetImage('images/fashion/gown1.jpg'), 'gown1', 15000, false),
-      Items(
-        AssetImage('images/fashion/gown2.jpg'),
-        'gown2',
-        15000,
-        false,
-      ),
-      Items(
-        AssetImage('images/fashion/gown3.jpg'),
-        'gown3',
-        15000,
-        false,
-      ),
-      Items(
-        AssetImage('images/fashion/gown4.jpg'),
-        'gown4',
-        15000,
-        false,
-      ),
-    ]),
-    ViewList(<Items>[
-      Items(
-        AssetImage('images/pastries/sweet1.jpg'),
-        'sweet1',
-        15000,
-        false,
-      ),
-      Items(
-        AssetImage('images/pastries/sweet2.jpg'),
-        'sweet2',
-        15000,
-        false,
-      ),
-      Items(
-        AssetImage('images/pastries/sweet3.jpg'),
-        'sweet3',
-        15000,
-        false,
-      ),
-      Items(
-        AssetImage('images/pastries/sweet4.jpg'),
-        'sweet4',
-        15000,
-        false,
-      ),
-      Items(
-        AssetImage('images/pastries/sweet5.jpg'),
-        'sweet5',
-        15000,
-        false,
-      ),
-      Items(
-        AssetImage('images/pastries/sweet6.jpg'),
-        'sweet6',
-        15000,
-        false,
-      )
-    ]),
-    ViewList(<Items>[
-      Items(
-        AssetImage('images/pastries/sweet1.jpg'),
-        'sweet1',
-        15000,
-        false,
-      ),
-      Items(
-        AssetImage('images/pastries/sweet2.jpg'),
-        'sweet2',
-        15000,
-        false,
-      ),
-      Items(
-        AssetImage('images/pastries/sweet3.jpg'),
-        'sweet3',
-        15000,
-        false,
-      ),
-      Items(
-        AssetImage('images/pastries/sweet4.jpg'),
-        'sweet4',
-        15000,
-        false,
-      ),
-      Items(
-        AssetImage('images/pastries/sweet5.jpg'),
-        'sweet5',
-        15000,
-        false,
-      ),
-      Items(
-        AssetImage('images/pastries/sweet6.jpg'),
-        'sweet6',
-        15000,
-        false,
-      )
-    ]),
-  ];
 }

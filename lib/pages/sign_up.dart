@@ -11,9 +11,8 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   bool passwordVisible = true;
   bool passwordVisible1 = true;
-  bool passwordVisible2 = true;
-  bool passwordToggle1 = false;
-  bool passwordToggle2 = false;
+  bool passwordToggle = true;
+  bool passwordToggle1 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +50,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     prefixIcon: Icons.account_box_outlined,
                     hint: 'Full name',
                     labelText: 'Full Name',
-                    passwordhidden: !passwordVisible,
+                    passwordhidden: false,
                     secureText: false,
                     padding: const EdgeInsets.only(top: 10),
                   ),
@@ -59,7 +58,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     prefixIcon: Icons.email_outlined,
                     hint: 'Enter Email Address',
                     labelText: 'Email',
-                    passwordhidden: !passwordVisible,
+                    passwordhidden: false,
                     secureText: false,
                     padding: const EdgeInsets.only(top: 10),
                   ),
@@ -67,7 +66,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     prefixIcon: Icons.lock_outline,
                     hint: 'Enter Password',
                     labelText: 'Password',
-                    passwordhidden: passwordVisible,
+                    passwordhidden: passwordVisible1,
                     suffixIcon: Icons.visibility,
                     suffixIcon2: Icons.visibility_off,
                     secureText: passwordToggle1,
@@ -86,12 +85,12 @@ class _SignUpPageState extends State<SignUpPage> {
                     passwordhidden: passwordVisible,
                     suffixIcon: Icons.visibility,
                     suffixIcon2: Icons.visibility_off,
-                    secureText: passwordToggle2,
+                    secureText: passwordToggle,
                     padding: const EdgeInsets.only(top: 10),
                     onPressed: () {
                       setState(() {
-                        passwordToggle2 = !passwordToggle2;
-                        passwordVisible2 = !passwordVisible2;
+                        passwordToggle = !passwordToggle;
+                        passwordVisible = !passwordVisible;
                       });
                     },
                   ),
@@ -126,20 +125,6 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                   ),
-                  // RaisedButton(
-                  //   onPressed: () {
-                  //     Navigator.pushNamed(context, '/login');
-                  //   },
-                  //   child: Text(
-                  //     'Sign up',
-                  //     style: TextStyle(
-                  //       color: Colors.white,
-                  //       fontWeight: FontWeight.bold,
-                  //       fontSize: 30.0,
-                  //     ),
-                  //   ),
-                  //   color: Color(0xFFF6D819),
-                  // ),
                 ],
               ),
             ]),

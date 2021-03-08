@@ -1,7 +1,6 @@
-import 'package:fast_shop/components/category_container.dart';
-//import 'package:fast_shop/components/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:fast_shop/components/item_list.dart';
 
 class CarouselWidgetPage extends StatelessWidget {
   @override
@@ -15,16 +14,17 @@ class MyCarousel extends StatefulWidget {
   _MyCarouselState createState() => _MyCarouselState();
 }
 
-int _current = 0;
-List<T> map<T>(List list, Function handler) {
-  List<T> result = [];
-  for (var i = 0; i < list.length; i++) {
-    result.add(handler(i, list[i]));
-  }
-  return result;
-}
-
 class _MyCarouselState extends State<MyCarousel> {
+  int _current = 0;
+  List<T> map<T>(List list, Function handler) {
+    List<T> result = [];
+    for (var i = 0; i < list.length; i++) {
+      result.add(handler(i, list[i]));
+    }
+    return result;
+  }
+
+  ItemList itemList = ItemList();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -105,7 +105,7 @@ class _MyCarouselState extends State<MyCarousel> {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: map<Widget>(itemList.promoItems, (index, url) {
+          children: map<Widget>([0, 1, 2], (index, url) {
             return Container(
               width: 10.0,
               height: 10.0,

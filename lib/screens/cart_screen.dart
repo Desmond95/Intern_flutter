@@ -76,7 +76,7 @@ class _CartScreenState extends State<CartScreen> {
               buttonText: 'CheckOut',
               onPress: () {
                 setState(() {
-                  // Navigator.pushNamed(context, '/home');
+                  Navigator.pushNamed(context, '/payment');
                   cartWidgets.remove(index);
                 });
               },

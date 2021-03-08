@@ -6,11 +6,13 @@ class ArticleContent extends StatelessWidget {
       {this.articleImage,
       this.articlePrice,
       this.articleItem,
+      this.width,
       this.articlePromoPrice});
   final AssetImage articleImage;
   final String articleItem;
   final double articlePrice;
   final double articlePromoPrice;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class ArticleContent extends StatelessWidget {
         Column(
           children: [
             Container(
-              width: 100,
+              width: width,
               height: 100,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.0),

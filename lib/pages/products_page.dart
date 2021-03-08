@@ -1,12 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:fast_shop/components/carousel_slider.dart';
+//import 'package:fast_shop/components/carousel_slider.dart';
 // import 'package:fast_shop/components/add_cart.dart';
 // import 'package:fast_shop/components/category_container.dart';
 // import 'package:fast_shop/components/category_container.dart';
 import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/item_list.dart';
 import 'package:fast_shop/components/square_button.dart';
-import 'package:fast_shop/screens/cart_screen.dart';
+//import 'package:fast_shop/screens/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
@@ -16,10 +16,6 @@ class ProductPage extends StatelessWidget {
     return Product();
   }
 }
-
-CartScreen cartScreen = CartScreen();
-
-void createCart() {}
 
 class Product extends StatefulWidget {
   @override
@@ -34,7 +30,15 @@ Color _color;
 bool isPressed = false;
 
 class _ProductState extends State<Product> {
-  int _current;
+  int _current = 0;
+  List<T> map<T>(List list, Function handler) {
+    List<T> result = [];
+    for (var i = 0; i < list.length; i++) {
+      result.add(handler(i, list[i]));
+    }
+    return result;
+  }
+
   ItemList itemList = ItemList();
   @override
   Widget build(BuildContext context) {
@@ -286,16 +290,16 @@ _displayDialog(BuildContext context) {
         return AlertDialog(
           title: Text('Add To Cart'),
           actions: <Widget>[
-            FlatButton(
+            TextButton(
               child: Text('CANCEL'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
-            FlatButton(
+            TextButton(
               child: Text('ADD'),
               onPressed: () {
-                Navigator.pushNamed(context, '/home', arguments: data);
+                Navigator.popAndPushNamed(context, '/home', arguments: data);
               },
             )
           ],
