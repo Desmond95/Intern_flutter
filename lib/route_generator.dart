@@ -1,6 +1,7 @@
 import 'package:fast_shop/onboardingscreen.dart';
 import 'package:fast_shop/pages/OM_page.dart';
 import 'package:fast_shop/pages/add_address_page.dart';
+import 'package:fast_shop/pages/forgot_password.dart';
 import 'package:fast_shop/pages/home_page.dart';
 import 'package:fast_shop/pages/login.dart';
 import 'package:fast_shop/pages/momo_page.dart';
@@ -68,6 +69,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => VisaPage());
       case '/success_page':
         return MaterialPageRoute(builder: (_) => SuccessPage());
+      case '/forgot_password':
+        return MaterialPageRoute(builder: (_) => ForgotPasswordPage());
       default:
         return _errorRoute();
     }

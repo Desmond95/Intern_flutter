@@ -105,11 +105,16 @@ class _LoginPageState extends State<LoginPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Text(
-                        'Forgot Password?',
-                        style: kLabelTextStyleYellow,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/forgot_password');
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Text(
+                          'Forgot Password?',
+                          style: kLabelTextStyleYellow,
+                        ),
                       ),
                     ),
                     Padding(

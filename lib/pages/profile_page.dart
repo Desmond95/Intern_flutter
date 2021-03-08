@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:fast_shop/components/form_inputfield.dart';
-import 'package:fast_shop/components/inputfield.dart';
+//import 'package:fast_shop/components/inputfield.dart';
 import 'package:flutter/material.dart';
 import 'package:fast_shop/components/constants.dart';
 import 'package:flutter/cupertino.dart';
@@ -96,9 +96,10 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 Container(
                   width: 150,
-                  height: 150,
+                  height: 125,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CircleAvatar(
                         backgroundImage: AssetImage(
