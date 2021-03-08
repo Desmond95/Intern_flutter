@@ -15,6 +15,7 @@ import 'package:fast_shop/pages/sign_up.dart';
 import 'package:fast_shop/screens/cart_screen.dart';
 import 'package:fast_shop/screens/offer_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:fast_shop/pages/forgot_password.dart';
 //import 'main.dart';
 import 'pages/notification_feed_page.dart';
 
@@ -62,6 +63,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => CartScreen());
       case '/payment':
         return MaterialPageRoute(builder: (_) => PaymentPage());
+      case '/forgotpassword':
+        return MaterialPageRoute(builder: (_) => ForgotPasswordPage());
 
       default:
         return _errorRoute();
