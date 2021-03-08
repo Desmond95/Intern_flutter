@@ -54,39 +54,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Container(
                       height: 110,
-                      child:
-                          ListView(scrollDirection: Axis.horizontal, children: [
-                        HorizontalList(
+                      child: ListView.builder(
+                        itemBuilder: (context, i) => HorizontalList(
+                          onTap: () {
+                            setState(() {
+                              Navigator.pushNamed(context, '/explore');
+                            });
+                          },
                           padding: EdgeInsets.all(10),
-                          assetImage: itemList.iconItems[0].image,
-                          itemName: itemList.iconItems[0].itemName,
+                          assetImage: itemList.iconItems[i].image,
+                          itemName: itemList.iconItems[i].itemName,
                         ),
-                        HorizontalList(
-                          padding: EdgeInsets.all(10),
-                          assetImage: itemList.iconItems[1].image,
-                          itemName: itemList.iconItems[1].itemName,
-                        ),
-                        HorizontalList(
-                          padding: EdgeInsets.all(10),
-                          assetImage: itemList.iconItems[2].image,
-                          itemName: itemList.iconItems[2].itemName,
-                        ),
-                        HorizontalList(
-                          padding: EdgeInsets.all(10),
-                          assetImage: itemList.iconItems[3].image,
-                          itemName: itemList.iconItems[3].itemName,
-                        ),
-                        HorizontalList(
-                          padding: EdgeInsets.all(10),
-                          assetImage: itemList.iconItems[4].image,
-                          itemName: itemList.iconItems[4].itemName,
-                        ),
-                        HorizontalList(
-                          padding: EdgeInsets.all(10),
-                          assetImage: itemList.iconItems[5].image,
-                          itemName: itemList.iconItems[5].itemName,
-                        )
-                      ])),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: itemList.iconItems.length,
+                        physics: BouncingScrollPhysics(),
+                      )),
                 ])),
             //pastries
             Column(

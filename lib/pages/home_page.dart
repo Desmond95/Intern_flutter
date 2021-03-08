@@ -5,6 +5,7 @@ import 'package:fast_shop/screens/cart_screen.dart';
 import 'package:fast_shop/screens/home_screen.dart';
 import 'package:fast_shop/screens/offer_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
   final int data;
@@ -118,6 +119,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<bool> _onBackPressed() {
+    if (data != 0) {
+      setState(() {
+        data = 0;
+      });
+    }
     return showDialog(
           context: context,
           builder: (context) => new AlertDialog(
@@ -130,7 +136,7 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(height: 16),
               new GestureDetector(
-                onTap: () => Navigator.of(context).pop(true),
+                onTap: () => SystemNavigator.pop(),
                 child: Text("YES"),
               ),
             ],

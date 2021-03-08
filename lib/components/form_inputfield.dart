@@ -1,10 +1,8 @@
-import 'dart:ui';
-
 import 'package:fast_shop/components/constants.dart';
 import 'package:flutter/material.dart';
 
-class InputField extends StatelessWidget {
-  InputField(
+class FormInputField extends StatelessWidget {
+  FormInputField(
       {this.prefixIcon,
       this.suffixIcon,
       @required this.hint,
@@ -19,16 +17,15 @@ class InputField extends StatelessWidget {
       this.onChanged,
       this.textInputAction,
       this.controller,
-      this.errorText,
-      this.onSubmit,
-      this.value});
+      this.value,
+      this.validator,
+      this.helperText});
 
   final IconData prefixIcon, suffixIcon, suffixIcon2;
-  final String hint, errorText;
-  final String labelText, value;
+  final String hint, helperText, labelText, value;
   final bool passwordhidden;
   final int maxTextLength;
-  final Function onPressed, onChanged, onSubmit;
+  final Function onPressed, onChanged, validator;
   final EdgeInsets padding;
   final TextInputType textInputType;
   final TextEditingController controller;
@@ -43,14 +40,14 @@ class InputField extends StatelessWidget {
         data: Theme.of(context).copyWith(
           primaryColor: Color(0xFFF4D50A),
         ),
-        child: TextField(
-          onSubmitted: onSubmit,
+        child: TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller,
+          validator: validator,
           textInputAction: textInputAction,
           scrollPadding: EdgeInsets.zero,
-          selectionHeightStyle: BoxHeightStyle.max,
           decoration: InputDecoration(
-            errorText: errorText,
+            helperText: helperText,
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
                 color: Color(0xFFF4D50A),
