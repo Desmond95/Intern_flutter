@@ -75,7 +75,6 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     Codec<String, String> stringToBase64 = utf8.fuse(base64);
     String passwordEncoded = stringToBase64.encode(password);
-    String passwordDecoded = stringToBase64.decode(passwordEncoded);
 
     return SafeArea(
       child: Scaffold(

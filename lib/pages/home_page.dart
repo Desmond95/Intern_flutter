@@ -1,5 +1,4 @@
 import 'package:fast_shop/components/constants.dart';
-import 'package:fast_shop/components/inputfield.dart';
 import 'package:fast_shop/data_search.dart';
 import 'package:fast_shop/screens/account_screen.dart';
 import 'package:fast_shop/screens/cart_screen.dart';
