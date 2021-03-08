@@ -20,7 +20,6 @@ class _OMPageState extends State<OMPage> {
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 1,
-          toolbarHeight: 80,
           iconTheme: IconThemeData(color: kIconColor),
           title: Text(
             'OM',
@@ -30,10 +29,9 @@ class _OMPageState extends State<OMPage> {
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Padding(
-            padding: EdgeInsets.all(25),
+            padding: EdgeInsets.all(15),
             child: Column(children: [
               Container(
-                width: 300,
                 height: 400,
                 padding: EdgeInsets.all(10),
                 child: Column(
@@ -41,10 +39,10 @@ class _OMPageState extends State<OMPage> {
                   children: [
                     Text(
                       'Number',
-                      style: kLabelTextStyleBlue,
+                      style: kLabelTextCategoryStyleBlue,
                     ),
                     TextField(
-                      keyboardType: TextInputType.numberWithOptions(),
+                      keyboardType: TextInputType.number,
                       maxLength: 9,
                       decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
@@ -57,10 +55,9 @@ class _OMPageState extends State<OMPage> {
                             borderSide: BorderSide(color: Color(0x5F0B0F82))),
                       ),
                     ),
-                    Padding(padding: EdgeInsets.fromLTRB(0, 2, 0, 20)),
                     Text(
                       'Amount',
-                      style: kLabelTextStyleBlue,
+                      style: kLabelTextCategoryStyleBlue,
                     ),
                     TextField(
                       keyboardType: TextInputType.numberWithOptions(),

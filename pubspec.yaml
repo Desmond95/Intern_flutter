@@ -27,6 +27,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   font_awesome_flutter: ^8.11.0
   smooth_star_rating: ^1.1.1
+  progress_dialog: ^1.2.4
 
 
 dev_dependencies:

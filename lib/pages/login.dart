@@ -2,6 +2,7 @@ import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/inputfield.dart';
 import 'package:fast_shop/components/square_button.dart';
 import 'package:flutter/material.dart';
+import 'package:progress_dialog/progress_dialog.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -13,8 +14,13 @@ int data = 1;
 class _LoginPageState extends State<LoginPage> {
   bool passwordToggle = true;
   bool passwordVisible = true;
+
   @override
   Widget build(BuildContext context) {
+    final ProgressDialog progressDialog = ProgressDialog(context);
+    progressDialog.style(
+      message: 'Please wait...',
+    );
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -83,7 +89,13 @@ class _LoginPageState extends State<LoginPage> {
                   buttonText: 'Sign In',
                   onPress: () {
                     setState(() {
-                      Navigator.of(context).pushNamed('/home', arguments: 0);
+                      progressDialog.show();
+
+                      Future.delayed(Duration(seconds: 2)).then(
+                          (value) => progressDialog.hide().whenComplete(() {
+                                Navigator.of(context)
+                                    .pushNamed('/home', arguments: 0);
+                              }));
                     });
                   },
                 ),

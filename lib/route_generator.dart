@@ -14,6 +14,8 @@ import 'package:fast_shop/pages/products_page.dart';
 import 'package:fast_shop/pages/profile_page.dart';
 import 'package:fast_shop/pages/sign_up.dart';
 import 'package:fast_shop/pages/explore_page.dart';
+import 'package:fast_shop/pages/success_page.dart';
+import 'package:fast_shop/pages/visa_page.dart';
 import 'package:fast_shop/screens/offer_screen.dart';
 import 'package:flutter/material.dart';
 import 'pages/notification_feed_page.dart';
@@ -62,6 +64,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => OrderDetailsPage());
       case '/explore':
         return MaterialPageRoute(builder: (_) => ExplorePage());
+      case '/visa_page':
+        return MaterialPageRoute(builder: (_) => VisaPage());
+      case '/success_page':
+        return MaterialPageRoute(builder: (_) => SuccessPage());
       default:
         return _errorRoute();
     }

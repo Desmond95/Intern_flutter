@@ -27,102 +27,67 @@ class _PaymentPageState extends State<PaymentPage> {
           ),
         ),
         body: Padding(
-          padding: EdgeInsets.all(30),
+          padding: EdgeInsets.all(20),
           child: Column(
             children: [
-              Container(
-                width: 300,
-                height: 60,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/feeds');
-                  },
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 26,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          image: DecorationImage(
-                            image: AssetImage('images/visa.jpg'),
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(15),
-                        child: Text(
-                          'Visa Card',
-                          style: kLabelTextStyleBlue,
-                        ),
-                      ),
-                    ],
+              ListTile(
+                onTap: () {
+                  Navigator.pushNamed(context, '/visa_page');
+                },
+                leading: Container(
+                  width: 26,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    image: DecorationImage(
+                      image: AssetImage('images/visa.jpg'),
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
-              ),
-              Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 5)),
-              Container(
-                width: 300,
-                height: 60,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/momo');
-                  },
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 26,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          image: DecorationImage(
-                            image: AssetImage('images/mtn money1.jpg'),
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(15),
-                        child: Text(
-                          'MoMo',
-                          style: kLabelTextStyleBlue,
-                        ),
-                      ),
-                    ],
-                  ),
+                title: Text(
+                  'Visa Card',
+                  style: kLabelTextStyleBlue,
                 ),
               ),
-              Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 5)),
-              Container(
-                width: 300,
-                height: 60,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/om_page');
-                  },
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 26,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          image: DecorationImage(
-                            image: AssetImage('images/orange money.jpg'),
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(15),
-                        child: Text(
-                          'OM',
-                          style: kLabelTextStyleBlue,
-                        ),
-                      ),
-                    ],
+              ListTile(
+                onTap: () {
+                  Navigator.pushNamed(context, '/momo');
+                },
+                leading: Container(
+                  width: 26,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    image: DecorationImage(
+                      image: AssetImage('images/mtn money1.jpg'),
+                      fit: BoxFit.contain,
+                    ),
                   ),
+                ),
+                title: Text(
+                  'MOMO',
+                  style: kLabelTextStyleBlue,
+                ),
+              ),
+              ListTile(
+                onTap: () {
+                  Navigator.pushNamed(context, '/om_page');
+                },
+                leading: Container(
+                  width: 26,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    image: DecorationImage(
+                      image: AssetImage('images/orange money.jpg'),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+                title: Text(
+                  'OM',
+                  style: kLabelTextStyleBlue,
                 ),
               ),
             ],
