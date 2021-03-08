@@ -1,7 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
+//import 'package:fast_shop/components/carousel_slider.dart';
+// import 'package:fast_shop/components/add_cart.dart';
+// import 'package:fast_shop/components/category_container.dart';
+// import 'package:fast_shop/components/category_container.dart';
 import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/item_list.dart';
 import 'package:fast_shop/components/square_button.dart';
+//import 'package:fast_shop/screens/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
