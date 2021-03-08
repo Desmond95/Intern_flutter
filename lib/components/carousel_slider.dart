@@ -105,7 +105,7 @@ class _MyCarouselState extends State<MyCarousel> {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: map<Widget>(itemList.promoItems, (index, url) {
+          children: map<Widget>([0, 1, 2], (index, url) {
             return Container(
               width: 10.0,
               height: 10.0,

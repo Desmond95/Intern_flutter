@@ -1,17 +1,19 @@
 import 'package:fast_shop/onboardingscreen.dart';
 import 'package:fast_shop/pages/OM_page.dart';
 import 'package:fast_shop/pages/add_address_page.dart';
-import 'package:fast_shop/pages/change_password_page.dart';
 import 'package:fast_shop/pages/home_page.dart';
 import 'package:fast_shop/pages/login.dart';
 import 'package:fast_shop/pages/momo_page.dart';
 import 'package:fast_shop/pages/notification_activities_page.dart';
 import 'package:fast_shop/pages/notification_offer_page.dart';
 import 'package:fast_shop/pages/notification_page.dart';
+import 'package:fast_shop/pages/order_details.dart';
+import 'package:fast_shop/pages/order_page.dart';
 import 'package:fast_shop/pages/payment_page.dart';
 import 'package:fast_shop/pages/products_page.dart';
 import 'package:fast_shop/pages/profile_page.dart';
 import 'package:fast_shop/pages/sign_up.dart';
+import 'package:fast_shop/pages/explore_page.dart';
 import 'package:fast_shop/screens/offer_screen.dart';
 import 'package:flutter/material.dart';
 import 'pages/notification_feed_page.dart';
@@ -46,8 +48,6 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => ProductPage());
       case '/add_address':
         return MaterialPageRoute(builder: (_) => AddAddressPage());
-      case '/change_password':
-        return MaterialPageRoute(builder: (_) => ChangePasswordPage());
       case '/momo':
         return MaterialPageRoute(builder: (_) => MomoPage());
       case '/om_page':
@@ -56,7 +56,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => ProfilePage());
       case '/payment':
         return MaterialPageRoute(builder: (_) => PaymentPage());
-
+      case '/orders':
+        return MaterialPageRoute(builder: (_) => OrderPage());
+      case '/order_details':
+        return MaterialPageRoute(builder: (_) => OrderDetailsPage());
+      case '/explore':
+        return MaterialPageRoute(builder: (_) => ExplorePage());
       default:
         return _errorRoute();
     }

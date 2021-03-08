@@ -12,9 +12,14 @@ class _PaymentPageState extends State<PaymentPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.popAndPushNamed(context, '/home', arguments: 3);
+            },
+          ),
           backgroundColor: Colors.white,
           elevation: 1,
-          toolbarHeight: 80,
           iconTheme: IconThemeData(color: kIconColor),
           title: Text(
             'Payment',

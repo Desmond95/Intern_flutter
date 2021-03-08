@@ -26,6 +26,7 @@ class _OfferScreenState extends State<OfferScreen> {
                 itemBuilder: (context, i) => CardArticle(
                   // cardChild: Text(itemsList[i]),
                   cardChild: ArticleContent(
+                    width: MediaQuery.of(context).size.width,
                     articleImage: itemList.promoItems[i].image,
                     articleItem: itemList.promoItems[i].itemName,
                     articlePrice: itemList.promoItems[i].price,

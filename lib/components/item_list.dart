@@ -166,6 +166,36 @@ class ItemList {
       15000,
       false,
     ),
+    Items(
+      AssetImage('images/promo/promo4.jpg'),
+      'item4',
+      150000,
+      false,
+    ),
+    Items(
+      AssetImage('images/promo/promo5.jpg'),
+      'HP laptop',
+      350000,
+      false,
+    ),
+    Items(
+      AssetImage('images/promo/promo6.jpg'),
+      'Louis Vuitton Sneakers',
+      35000,
+      false,
+    ),
+    Items(
+      AssetImage('images/promo/promo7.jpg'),
+      'King Size Mattress',
+      205000,
+      false,
+    ),
+    Items(
+      AssetImage('images/promo/promo8.jpg'),
+      'iPhone 12pro max',
+      650000,
+      false,
+    ),
   ];
   List<Items> sweetItems = [
     Items(
