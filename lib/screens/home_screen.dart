@@ -12,11 +12,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 ItemList itemList = ItemList();
-// Widget myFunction() {
-//   for (int i = 0; i <= itemList.categoryItems.length; i++) {
-//     for (int j = 0; i <= itemList.; j++)
-//   }
-// }
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -97,6 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemBuilder: (context, i) => CardArticle(
                       // cardChild: Text(itemsList[i]),
                       cardChild: ArticleContent(
+                        width: 100,
                         articleImage: itemList.sweetItems[i].image,
                         articleItem: itemList.sweetItems[i].itemName,
                         articlePrice: itemList.sweetItems[i].price,
@@ -141,6 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemBuilder: (context, i) => CardArticle(
                       // cardChild: Text(itemsList[i]),
                       cardChild: ArticleContent(
+                        width: 100,
                         articleImage: itemList.bagItems[i].image,
                         articleItem: itemList.bagItems[i].itemName,
                         articlePrice: itemList.bagItems[i].price,
@@ -184,11 +181,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemBuilder: (context, i) => CardArticle(
                       // cardChild: Text(itemsList[i]),
                       cardChild: ArticleContent(
+                        width: 100,
                         articleImage: itemList.fashionItems[i].image,
                         articleItem: itemList.fashionItems[i].itemName,
                         articlePrice: itemList.fashionItems[i].price,
                       ),
-                      onPress: onPress,
+                      onPress: () {
+                        setState(() {
+                          Navigator.pushNamed(context, '/product',
+                              arguments: i);
+                        });
+                      },
                     ),
                     itemCount: itemList.fashionItems.length,
                   ),
@@ -200,6 +203,4 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
-  onPress() {}
 }

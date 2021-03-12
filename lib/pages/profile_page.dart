@@ -75,7 +75,6 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     Codec<String, String> stringToBase64 = utf8.fuse(base64);
     String passwordEncoded = stringToBase64.encode(password);
-    String passwordDecoded = stringToBase64.decode(passwordEncoded);
 
     return SafeArea(
       child: Scaffold(
@@ -154,12 +153,10 @@ class _ProfilePageState extends State<ProfilePage> {
                             '${_dateTime.day}-${_dateTime.month}-${_dateTime.year}',
                             style: TextStyle(color: Colors.black87),
                           ),
-
                           Icon(
                             Icons.keyboard_arrow_right_outlined,
                             color: Colors.black54,
                           ),
-                          // iconSize: 25,
                         ],
                       ),
                     ),
@@ -288,7 +285,7 @@ class _ProfilePageState extends State<ProfilePage> {
         context: context,
         initialDate: DateTime.now(),
         firstDate: DateTime(1990, 03, 05),
-        lastDate: DateTime(2021, 03, 05));
+        lastDate: DateTime(2040, 03, 05));
     if (date != null) {
       setState(() {
         _dateTime = date;

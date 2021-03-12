@@ -101,7 +101,18 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
+    version: "1.8.0"
+  progress_dialog:
+    dependency: "direct main"
+    description:
+      name: progress_dialog
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.4"
+=======
     version: "1.8.0-nullsafety.1"
+>>>>>>> c629f21bf58027e36afc0573564bbc171843e06d
   sky_engine:
     dependency: transitive
     description: flutter

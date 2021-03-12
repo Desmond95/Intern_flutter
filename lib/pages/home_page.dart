@@ -1,5 +1,5 @@
 import 'package:fast_shop/components/constants.dart';
-import 'package:fast_shop/components/inputfield.dart';
+import 'package:fast_shop/data_search.dart';
 import 'package:fast_shop/screens/account_screen.dart';
 import 'package:fast_shop/screens/cart_screen.dart';
 import 'package:fast_shop/screens/home_screen.dart';
@@ -35,36 +35,31 @@ class _HomePageState extends State<HomePage> {
     switch (data) {
       case 0:
         return AppBar(
-          toolbarHeight: 80,
-          elevation: 0,
+          elevation: 1,
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
-          title: InputField(
-            hint: 'Search Product',
-            labelText: null,
-            passwordhidden: false,
-            prefixIcon: Icons.search,
-            suffixIcon2: Icons.send,
-            padding: EdgeInsets.only(left: 0, right: 0),
-          ),
+          title: Text('Dovv', style: kLabelTextStyleBlue),
           actions: [
             Row(
               children: [
-                Icon(
-                  Icons.search,
-                  color: kIconColor,
-                  size: 30,
+                IconButton(
+                  icon: Icon(
+                    Icons.search,
+                    color: kIconColor,
+                  ),
+                  onPressed: () {
+                    showSearch(context: context, delegate: DataSearch());
+                  },
                 ),
-                GestureDetector(
-                  onTap: () {
+                IconButton(
+                  onPressed: () {
                     setState(() {
                       Navigator.pushNamed(context, '/notification');
                     });
                   },
-                  child: Icon(
+                  icon: Icon(
                     Icons.notifications_outlined,
                     color: kIconColor,
-                    size: 30,
                   ),
                 ),
               ],
@@ -82,10 +77,15 @@ class _HomePageState extends State<HomePage> {
             style: kLabelTextStyleBlue,
           ),
           actions: [
-            Icon(
-              Icons.search,
-              color: kIconColor,
-              size: 30,
+            IconButton(
+              onPressed: () {
+                showSearch(context: context, delegate: DataSearch());
+              },
+              icon: Icon(
+                Icons.search,
+                color: kIconColor,
+                size: 30,
+              ),
             )
           ],
         );
@@ -130,13 +130,13 @@ class _HomePageState extends State<HomePage> {
             title: new Text('Are you sure?'),
             content: new Text('Do you want to exit an App'),
             actions: [
-              new GestureDetector(
-                onTap: () => Navigator.of(context).pop(false),
+              new TextButton(
+                onPressed: () => Navigator.of(context).pop(false),
                 child: Text("NO"),
               ),
               SizedBox(height: 16),
-              new GestureDetector(
-                onTap: () => SystemNavigator.pop(),
+              new TextButton(
+                onPressed: () => SystemNavigator.pop(),
                 child: Text("YES"),
               ),
             ],

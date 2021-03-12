@@ -11,8 +11,6 @@ class OfferScreen extends StatefulWidget {
 ItemList itemList = ItemList();
 
 class _OfferScreenState extends State<OfferScreen> {
-  var onPress;
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -33,7 +31,9 @@ class _OfferScreenState extends State<OfferScreen> {
                     articlePromoPrice: itemList.promoItems[i].price -
                         0.25 * itemList.promoItems[i].price,
                   ),
-                  onPress: onPress,
+                  onPress: () {
+                    Navigator.pushNamed(context, '/product');
+                  },
                 ),
                 itemCount: itemList.promoItems.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
