@@ -78,7 +78,7 @@ class _OMPageState extends State<OMPage> {
               SquareButton(
                 buttonText: 'Pay',
                 onPress: () {
-                  Navigator.pushNamed(context, '/home');
+                  Navigator.pushNamed(context, '/success_page');
                 },
               ),
             ]),

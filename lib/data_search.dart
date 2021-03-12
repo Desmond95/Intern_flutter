@@ -1,29 +1,35 @@
-import 'package:fast_shop/components/constants.dart';
-import 'package:fast_shop/pages/products_page.dart';
 import 'package:flutter/material.dart';
 
 class DataSearch extends SearchDelegate {
-  var itemsData;
   final itemsSearched = [
-    'Nike',
+    'nike',
     'iPhone',
-    'Hp',
-    'Louis Vuitton',
-    'Air max',
-    'Nike air',
-    'Doughnuts',
-    'Handbags',
-    'Ashuabi',
-    'Bags',
-    'Cakes',
-    'Dishes',
-    'Plates',
+    'hp',
+    'louis vuitton',
+    'air max',
+    'nike air',
+    'doughnuts',
+    'handbags',
+    'ashuabi',
+    'bags',
+    'cakes',
+    'dishes',
+    'plates',
+    'bedsheet',
+    't-shirt',
+    'polo',
+    'heels',
+    'sneakers',
   ];
   final recentItems = [
-    'Nike',
+    'nike',
     'iPhone',
-    'Hp',
-    'Louis Vuitton',
+    'hp',
+    'louis vuitton',
+    'bags',
+    'cakes',
+    'dishes',
+    'plates',
   ];
   @override
   List<Widget> buildActions(BuildContext context) {
@@ -43,8 +49,9 @@ class DataSearch extends SearchDelegate {
     // leading icon on left of app bar
     // throw UnimplementedError();
     return IconButton(
-        icon: AnimatedIcon(
-            icon: AnimatedIcons.menu_arrow, progress: transitionAnimation),
+        icon: Icon(
+          Icons.arrow_back,
+        ),
         onPressed: () {
           close(context, null);
         });
@@ -60,7 +67,7 @@ class DataSearch extends SearchDelegate {
             width: 150,
             child: Card(
               elevation: 10,
-              child: Center(child: Text('')),
+              child: Center(child: Text(query)),
             )));
   }
 

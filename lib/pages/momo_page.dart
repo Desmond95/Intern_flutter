@@ -79,7 +79,7 @@ class _MomoPageState extends State<MomoPage> {
               SquareButton(
                 buttonText: 'Pay',
                 onPress: () {
-                  Navigator.pushNamed(context, '/home');
+                  Navigator.pushNamed(context, '/success_page');
                 },
               ),
             ]),
