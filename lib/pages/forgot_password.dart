@@ -1,11 +1,7 @@
-//import 'dart:html';
-
-//import 'package:fast_shop/testt.dart';
 import 'package:flutter/material.dart';
 import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/square_button.dart';
 import 'package:flutter/rendering.dart';
-import 'package:fast_shop/components/inputfield.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   @override

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "449783951427",
+    "project_id": "fast-shop-9151f",
+    "storage_bucket": "fast-shop-9151f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449783951427:android:be8e7e7b1a7e4b95b0e4f6",
+        "android_client_info": {
+          "package_name": "com.globexcam.fast_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449783951427-mjmhfe4iu6jj0stvt29nd9fh59ufk4me.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmGJst9Ndhbe7dRPt-LDwhcw7g-1EU0FM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449783951427-mjmhfe4iu6jj0stvt29nd9fh59ufk4me.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

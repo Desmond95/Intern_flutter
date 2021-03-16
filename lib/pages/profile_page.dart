@@ -1,12 +1,10 @@
 import 'dart:convert';
 import 'package:fast_shop/components/form_inputfield.dart';
-//import 'package:fast_shop/components/inputfield.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fast_shop/components/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fast_shop/components/square_button.dart';
-
-import 'dart:io' show Platform;
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -15,9 +13,13 @@ class ProfilePage extends StatefulWidget {
   _ProfilePageState createState() => _ProfilePageState();
 }
 
+final _auth = FirebaseAuth.instance;
+User loggedInUser;
+
 List<String> genderList = ['Male', 'Female'];
 
 class _ProfilePageState extends State<ProfilePage> {
+  String userName;
   String selectedGender = 'Male';
   IconData _genderIcon = FontAwesomeIcons.venus;
   String phoneNumber = '651034554';
@@ -53,19 +55,22 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  CupertinoPicker iosPicker() {
-    List<Text> pickerItems = [];
-    for (String currency in genderList) {
-      var newItem = Text('$currency');
-      pickerItems.add(newItem);
+  @override
+  void initState() {
+    super.initState();
+
+    getCurrentUser();
+  }
+
+  void getCurrentUser() async {
+    try {
+      final user = await _auth.currentUser;
+      if (user != null) {
+        loggedInUser = user;
+      }
+    } catch (e) {
+      print(e);
     }
-    return CupertinoPicker(
-      itemExtent: 32,
-      onSelectedItemChanged: (selectedIndex) {
-        print(selectedIndex);
-      },
-      children: pickerItems,
-    );
   }
 
   DateTime _dateTime = DateTime.now();
@@ -93,31 +98,26 @@ class _ProfilePageState extends State<ProfilePage> {
             physics: BouncingScrollPhysics(),
             child: Column(
               children: [
-                Container(
-                  width: 150,
-                  height: 125,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CircleAvatar(
-                        backgroundImage: AssetImage(
-                          'images/dash.jpg',
-                        ),
-                        radius: 50,
-                        // backgroundColor: Colors.pink,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage(
+                        'images/dash.jpg',
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Ornella',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Color(0xFF0B0F82),
-                        ),
+                      radius: 50,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Desmond',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Color(0xFF0B0F82),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
                 ListTile(
                   contentPadding: EdgeInsets.only(left: 16),
@@ -130,7 +130,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     'Gender',
                     style: kLabelTextStyleBlue,
                   ),
-                  trailing: Platform.isIOS ? iosPicker() : androidDropdown(),
+                  trailing: androidDropdown(),
                 ),
                 ListTile(
                   contentPadding: EdgeInsets.only(left: 16),
@@ -162,37 +162,32 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/add_address');
-                  },
-                  child: ListTile(
-                    contentPadding: EdgeInsets.only(left: 16),
-                    leading: Icon(
-                      Icons.mail_outline_outlined,
-                      color: Color(0xFFF4D50A),
-                    ),
-                    title: Text(
-                      'Email',
-                      style: kLabelTextStyleBlue,
-                    ),
-                    trailing: GestureDetector(
-                      onTap: _emailAddress,
-                      child: Container(
-                        width: 170,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text(
-                              '$emailAddress',
-                              style: TextStyle(color: Colors.black87),
-                            ),
-                            Icon(
-                              Icons.keyboard_arrow_right_outlined,
-                              color: Colors.black54,
-                            ),
-                          ],
-                        ),
+                ListTile(
+                  contentPadding: EdgeInsets.only(left: 16),
+                  leading: Icon(
+                    Icons.mail_outline_outlined,
+                    color: Color(0xFFF4D50A),
+                  ),
+                  title: Text(
+                    'Email',
+                    style: kLabelTextStyleBlue,
+                  ),
+                  trailing: GestureDetector(
+                    onTap: _emailAddress,
+                    child: Container(
+                      width: 170,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            '$emailAddress',
+                            style: TextStyle(color: Colors.black87),
+                          ),
+                          Icon(
+                            Icons.keyboard_arrow_right_outlined,
+                            color: Colors.black54,
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -260,6 +255,46 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                     ),
+                  ),
+                ),
+                ListTile(
+                  contentPadding: EdgeInsets.only(left: 16),
+                  leading: Icon(
+                    Icons.logout,
+                    color: Color(0xFFF4D50A),
+                  ),
+                  title: GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => new AlertDialog(
+                            title: new Text('Are you sure?'),
+                            content: new Text('Do you want to Log out'),
+                            actions: [
+                              new TextButton(
+                                onPressed: () =>
+                                    Navigator.of(context).pop(false),
+                                child: Text("NO"),
+                              ),
+                              SizedBox(height: 16),
+                              new TextButton(
+                                onPressed: () {
+                                  _auth.signOut();
+                                  Navigator.popAndPushNamed(context, '/login');
+                                },
+                                child: Text("YES"),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                      child: Text(
+                        'Log Out',
+                        style: kLabelTextStyleBlue,
+                      )),
+                  trailing: Icon(
+                    Icons.keyboard_arrow_right_outlined,
+                    color: Colors.black54,
                   ),
                 ),
                 Padding(
@@ -566,6 +601,7 @@ class _ProfilePageState extends State<ProfilePage> {
     if (typedPassword != null) {
       setState(() {
         password = typedPassword;
+        _auth.confirmPasswordReset(code: '1234', newPassword: password);
       });
     }
   }
