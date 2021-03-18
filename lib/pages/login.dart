@@ -2,6 +2,7 @@ import 'package:fast_shop/components/constants.dart';
 import 'package:fast_shop/components/inputfield.dart';
 import 'package:fast_shop/components/square_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -17,6 +18,26 @@ class _LoginPageState extends State<LoginPage>
   AnimationController controller;
   bool passwordToggle = true;
   bool passwordVisible = true;
+
+  Future<bool> _onBackPressedLogin() {
+    return showDialog(
+        context: context,
+        builder: (context) => new AlertDialog(
+              title: new Text('Are you sure?'),
+              content: new Text('Do you want to exit an App'),
+              actions: [
+                new TextButton(
+                  onPressed: () => Navigator.of(context).pop(false),
+                  child: Text("NO"),
+                ),
+                SizedBox(height: 16),
+                new TextButton(
+                  onPressed: () => SystemNavigator.pop(),
+                  child: Text("YES"),
+                ),
+              ],
+            ));
+  }
 
   bool showSpinner = false;
   final _auth = FirebaseAuth.instance;
@@ -37,9 +58,13 @@ class _LoginPageState extends State<LoginPage>
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: ModalProgressHUD(
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 0,
+      ),
+      body: WillPopScope(
+        onWillPop: _onBackPressedLogin,
+        child: ModalProgressHUD(
           inAsyncCall: showSpinner,
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),

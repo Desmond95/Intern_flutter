@@ -10,19 +10,16 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
-  startTime() async {
-    var _duration = new Duration(seconds: 4);
+  startTime() {
+    var _duration = new Duration(seconds: 5);
     return new Timer(_duration, getCurrentUser);
   }
 
-  bool showSpinner = false;
+  bool showSpinner = true;
   final _auth = FirebaseAuth.instance;
   User loggedInUser;
 
   void getCurrentUser() async {
-    setState(() {
-      showSpinner = true;
-    });
     try {
       final user = await _auth.currentUser;
       if (user != null) {
@@ -41,7 +38,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         });
       }
     } catch (e) {
-      print(e);
+      print('error is $e');
     }
   }
 
@@ -49,12 +46,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   void initState() {
     super.initState();
     startTime();
-    getCurrentUser();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 0,
+      ),
       backgroundColor: Color(0xFFF6D819),
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,

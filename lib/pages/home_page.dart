@@ -56,7 +56,6 @@ class _HomePageState extends State<HomePage> {
       case 0:
         return AppBar(
           elevation: 1,
-          backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
           title: Text('Dovv', style: kLabelTextStyleBlue),
           actions: [
@@ -89,7 +88,6 @@ class _HomePageState extends State<HomePage> {
       case 1:
         return AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.white,
           elevation: 1,
           iconTheme: IconThemeData(color: kIconColor),
           title: Text(
@@ -112,7 +110,6 @@ class _HomePageState extends State<HomePage> {
       case 2:
         return AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.white,
           elevation: 1,
           iconTheme: IconThemeData(color: kIconColor),
           title: Text(
@@ -123,7 +120,6 @@ class _HomePageState extends State<HomePage> {
       case 3:
         return AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.white,
           elevation: 1,
           iconTheme: IconThemeData(color: kIconColor),
           title: Text(
@@ -174,67 +170,65 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: WillPopScope(
-        onWillPop: data == 0 ? _onBackPressed : _onBackPressedToHome,
-        child: Scaffold(
-          appBar: appBarFunction(),
-          body: Center(
-            child: _widgetOptions.elementAt(data),
-            // child: Text('$sentArgument'),
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            items: <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home_outlined,
-                  color: kIconColor,
-                  size: 24,
-                ),
-                label: 'Home',
-                activeIcon: Icon(
-                  Icons.home_outlined,
-                  color: Color(0xFFF4D50A),
-                ),
+    return WillPopScope(
+      onWillPop: data == 0 ? _onBackPressed : _onBackPressedToHome,
+      child: Scaffold(
+        appBar: appBarFunction(),
+        body: Center(
+          child: _widgetOptions.elementAt(data),
+          // child: Text('$sentArgument'),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home_outlined,
+                color: kIconColor,
+                size: 24,
               ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.local_offer_outlined,
-                  color: kIconColor,
-                ),
-                activeIcon: Icon(
-                  Icons.local_offer_outlined,
-                  color: Color(0xFFF4D50A),
-                ),
-                label: 'Offer',
+              label: 'Home',
+              activeIcon: Icon(
+                Icons.home_outlined,
+                color: Color(0xFFF4D50A),
               ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.shopping_cart_outlined,
-                  color: kIconColor,
-                ),
-                activeIcon: Icon(
-                  Icons.shopping_cart_outlined,
-                  color: Color(0xFFF4D50A),
-                ),
-                label: 'Cart',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.local_offer_outlined,
+                color: kIconColor,
               ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.person_outline,
-                  color: kIconColor,
-                ),
-                activeIcon: Icon(
-                  Icons.person_outline,
-                  color: Color(0xFFF4D50A),
-                ),
-                label: 'Account',
+              activeIcon: Icon(
+                Icons.local_offer_outlined,
+                color: Color(0xFFF4D50A),
               ),
-            ],
-            currentIndex: data,
-            onTap: _onItemTap,
-          ),
+              label: 'Offer',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.shopping_cart_outlined,
+                color: kIconColor,
+              ),
+              activeIcon: Icon(
+                Icons.shopping_cart_outlined,
+                color: Color(0xFFF4D50A),
+              ),
+              label: 'Cart',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person_outline,
+                color: kIconColor,
+              ),
+              activeIcon: Icon(
+                Icons.person_outline,
+                color: Color(0xFFF4D50A),
+              ),
+              label: 'Account',
+            ),
+          ],
+          currentIndex: data,
+          onTap: _onItemTap,
         ),
       ),
     );

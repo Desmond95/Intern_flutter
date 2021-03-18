@@ -1,27 +1,40 @@
-import 'package:flutter/material.dart';
 import 'package:fast_shop/components/item_list.dart';
+import 'package:flutter/material.dart';
 
 import 'constants.dart';
 
-class CartWidget extends StatefulWidget {
-  @override
-  _CartWidgetState createState() => _CartWidgetState();
-}
+class CartWidget extends StatelessWidget {
+  CartWidget(
+      {this.onPressHeart,
+      this.isPressed,
+      this.onPressAdd,
+      this.onPressSubtract,
+      this.onPressDelete,
+      this.iconHeart,
+      this.iconDelete,
+      this.iconAdd,
+      this.iconSubtract,
+      this.itemCount,
+      this.itemImage,
+      this.productName,
+      this.color,
+      this.productPrice});
+  final Function onPressHeart, onPressAdd, onPressSubtract, onPressDelete;
+  final IconData iconHeart, iconDelete, iconAdd, iconSubtract;
+  //= Icons.favorite_outline;
+  final bool isPressed;
+  final int itemCount;
+  final AssetImage itemImage;
+  final String productName;
+  final Color color;
+  final int productPrice;
 
-class _CartWidgetState extends State<CartWidget> {
-  ItemList itemList = ItemList();
-  IconData _iconHeart = Icons.favorite_outline;
-  bool isPressed = false;
-  int itemCount = 1;
-  Color _color;
-  int price;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: Container(
         height: 100,
-        // margin: EdgeInsets.all(15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           border: Border.all(color: Colors.blue.shade100),
@@ -34,8 +47,8 @@ class _CartWidgetState extends State<CartWidget> {
                 height: 50,
                 width: 50,
                 decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: itemList.bagItems[0].image, fit: BoxFit.cover)),
+                    image:
+                        DecorationImage(image: itemImage, fit: BoxFit.cover)),
               ),
             ),
             Expanded(
@@ -47,7 +60,7 @@ class _CartWidgetState extends State<CartWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'productName',
+                          '$productName',
                           style: kLabelTextStyleBlue,
                           softWrap: true,
                         ),
@@ -55,17 +68,17 @@ class _CartWidgetState extends State<CartWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             IconButton(
-                              icon: Icon(_iconHeart),
+                              icon: Icon(iconHeart),
                               padding: EdgeInsets.zero,
-                              color: _color,
+                              color: color,
                               iconSize: 24,
-                              onPressed: onPress,
+                              onPressed: onPressHeart,
                             ),
                             IconButton(
-                              icon: Icon(Icons.delete_outline),
+                              icon: Icon(iconDelete),
                               padding: EdgeInsets.zero,
                               iconSize: 24,
-                              onPressed: () {},
+                              onPressed: onPressDelete,
                             ),
                           ],
                         ),
@@ -79,7 +92,7 @@ class _CartWidgetState extends State<CartWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            '$price',
+                            '$productPrice',
                             style: kLabelTextStyleYellow,
                           ),
                           Container(
@@ -102,7 +115,7 @@ class _CartWidgetState extends State<CartWidget> {
                                         ),
                                         iconSize: 24,
                                         padding: EdgeInsets.zero,
-                                        icon: Icon(Icons.remove),
+                                        icon: Icon(iconSubtract),
                                         onPressed: onPressSubtract),
                                   ),
                                 ),
@@ -123,7 +136,7 @@ class _CartWidgetState extends State<CartWidget> {
                                         maxHeight: 25,
                                       ),
                                       iconSize: 24,
-                                      icon: Icon(Icons.add),
+                                      icon: Icon(iconAdd),
                                       onPressed: onPressAdd,
                                     ),
                                   ),
@@ -144,37 +157,37 @@ class _CartWidgetState extends State<CartWidget> {
     );
   }
 
-  void onPressAdd() {
-    setState(() {
-      if (0 <= itemCount && itemCount < 10) {
-        itemCount++;
-      } else {
-        itemCount = 10;
-      }
-    });
-  }
+  // void onPressAdd() {
+  //   setState(() {
+  //     if (0 <= itemCount && itemCount < 10) {
+  //       itemCount++;
+  //     } else {
+  //       itemCount = 10;
+  //     }
+  //   });
+  // }
 
-  void onPressSubtract() {
-    setState(() {
-      if (itemCount > 0) {
-        itemCount--;
-      } else {
-        itemCount = 0;
-      }
-    });
-  }
+  // void onPressSubtract() {
+  //   setState(() {
+  //     if (itemCount > 0) {
+  //       itemCount--;
+  //     } else {
+  //       itemCount = 0;
+  //     }
+  //   });
+  // }
 
-  void onPress() {
-    setState(() {
-      if (isPressed == false) {
-        isPressed = true;
-        _color = kRedColor;
-        _iconHeart = Icons.favorite;
-      } else {
-        isPressed = false;
-        _color = null;
-        _iconHeart = Icons.favorite_outline;
-      }
-    });
-  }
+  // void onPress() {
+  //   setState(() {
+  //     if (isPressed == false) {
+  //       isPressed = true;
+  //       _color = kRedColor;
+  //       _iconHeart = Icons.favorite;
+  //     } else {
+  //       isPressed = false;
+  //       _color = null;
+  //       _iconHeart = Icons.favorite_outline;
+  //     }
+  //   });
+  // }
 }
