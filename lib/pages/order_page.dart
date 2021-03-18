@@ -10,7 +10,7 @@ class _OrderPageState extends State<OrderPage> {
   @override
   Widget build(BuildContext context) {
     Future<bool> _onBackPressedOrder() {
-      Navigator.popAndPushNamed(context, '/home', arguments: 3);
+      return Navigator.popAndPushNamed(context, '/home', arguments: 3);
     }
 
     return SafeArea(

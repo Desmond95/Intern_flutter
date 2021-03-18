@@ -6,7 +6,7 @@ class SuccessPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future<bool> _onBackPressedSuccessPage() {
-      Navigator.popAndPushNamed(context, '/orders');
+      return Navigator.popAndPushNamed(context, '/orders');
     }
 
     return SafeArea(
